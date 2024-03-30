@@ -1,0 +1,113 @@
+@page {
+    width: 2480px;
+    height: 3508px;
+    margin: 0mm;
+}
+
+@media print {
+    body {
+        display: inline-block;
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        transform-origin: top left;
+        transform: scale(0.48);
+        page-break-before: always;
+        page-break-after: always;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+
+.report {
+    position: relative;
+    width: 2480px;
+    height: 3508px;
+    background-color: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+}
+
+.header_left {
+    position: relative;
+    width: 1851.6px;
+    height: 275px;
+    background-color: #0c4999;
+    border-top-right-radius: 300px;
+}
+
+.header_left_number {
+    position: absolute;
+    top: 90px;
+    left: 170px;
+    font-family: Pretendard;
+    font-size: 120px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.49;
+    letter-spacing: -5.88px;
+    color: #fff;
+}
+
+.header_left_text {
+    position: absolute;
+    top: 130px;
+    left: 350px;
+    font-family: Pretendard;
+    font-size: 90px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: -1.5px;
+    color: #fff;
+}
+
+.header_right {
+    display: flex;
+}
+
+.header_right_key {
+    padding-top: 30px;
+    margin-left: 100px;
+    font-family: Pretendard;
+    font-size: 34px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.51px;
+    text-align: left;
+    color: #969696;
+}
+
+.header_right_value {
+    padding-top: 30px;
+    margin-left: 80px;
+    font-family: Pretendard;
+    font-size: 34px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.51px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.title {
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: -0.75px;
+    text-align: left;
+    color: #0c4999;
+}

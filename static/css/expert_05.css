@@ -1,0 +1,210 @@
+@page {
+    width: 2480px;
+    height: 3508px;
+    margin: 0mm;
+}
+
+@media print {
+    body {
+        display: inline-block;
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        transform-origin: top left;
+        transform: scale(0.48);
+        page-break-before: always;
+        page-break-after: always;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+
+.report {
+    position: relative;
+    width: 2480px;
+    height: 3508px;
+    background-color: #fff;
+}
+
+.logo_cogmotest {
+    position: absolute;
+    top: 108px;
+    left: 1810px;
+    height: 210px;
+    object-fit: contain;
+}
+
+.title {
+    position: absolute;
+    top: 289px;
+    left: 130px;
+    height: 55px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 46px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: -0.69px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.desc {
+    position: absolute;
+    top: 350px;
+    width: 89.5%;
+    left: 130px;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.28;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #303030;
+}
+
+.box {
+    position: absolute;
+    width: 89.5%;
+    margin: auto;
+    top: 650px;
+    left: 130px;
+}
+
+.box1 {
+    position: absolute;
+}
+
+.box2 {
+    position: absolute;
+    top: 530px;
+}
+
+.box3 {
+    position: absolute;
+    top: 1060px;
+}
+
+.message_box {
+    position: absolute;
+}
+
+.message_title {
+    position: absolute;
+    top: 42px;
+    left: 42px;
+}
+
+.box_lesson {
+    position: relative;
+    width: fit-content;
+}
+
+.lesson1 {
+    left: 355px;
+    top: -380px;
+}
+
+.lesson2 {
+    top: -644px;
+    left: 970px;
+}
+
+.lesson3 {
+    top: -905px;
+    left: 1600px;
+}
+
+.lesson_level {
+    position: absolute;
+    top: 50px;
+    left: 290px;
+    width: 134px;
+    height: 48px;
+    padding: 4px 18px 4px 19px;
+    border-radius: 24px;
+    font-family: Pretendard;
+    font-size: 34px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: -0.51px;
+    text-align: center;
+    color: #fff;
+}
+
+.level1 {
+    background-color: #6cc562;
+}
+
+.level2 {
+    background-color: #ff9327;
+}
+
+.level3 {
+    background-color: #5da2ff;
+}
+
+.lesson_name {
+    position: absolute;
+    top: 130px;
+    left: 290px;
+    width: max-content;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.15;
+    letter-spacing: -0.6px;
+    text-align: left;
+    color: #303030;
+}
+
+.bottomline {
+    position: absolute;
+    top: 3250px;
+    left: 133.5px;
+    width: 2215px;
+    height: 8px;
+    background-color: #a2a2a2;
+}
+
+.bottomleft {
+    position: absolute;
+    top: 3300px;
+    left: 130px;
+    height: 40px;
+    font-family: Pretendard;
+    font-size: 34px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: -0.51px;
+    text-align: left;
+    color: #a2a2a2;
+}
+
+.bottomright {
+    position: absolute;
+    top: 0px;
+    top: 3300px;
+    left: 2309px;
+    height: 40px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 34px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: -0.51px;
+    text-align: left;
+    color: #2a2a2a;
+}

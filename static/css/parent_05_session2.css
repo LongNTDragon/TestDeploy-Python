@@ -1,0 +1,36 @@
+.session2 {
+    position: relative;
+    top: 200px;
+    margin: 0 95px;
+}
+
+.title2 {
+    display: flex;
+    font-size: 46px;
+    justify-content: space-between;
+}
+
+.divider2 {
+    width: 2020px;
+    height: 4px;
+    margin-top: 25px;
+    background-color: #0c4999;
+}
+
+.desc2 {
+    border: 1px solid gray;
+    padding: 20px 60px 50px 60px;
+    font-family: Pretendard;
+    font-size: 38px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.32;
+    letter-spacing: -0.57px;
+    text-align: left;
+    color: #303030;
+}
+
+.desc2 ul {
+    margin: 0;
+}

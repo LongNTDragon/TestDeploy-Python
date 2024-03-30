@@ -1,0 +1,77 @@
+@page {
+    width: 2480px;
+    height: 3508px;
+    margin: 0mm;
+}
+
+@media print {
+    body {
+        display: inline-block;
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        transform-origin: top left;
+        transform: scale(0.48);
+        page-break-before: always;
+        page-break-after: always;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+
+.report {
+    position: relative;
+    width: 2480px;
+    height: 3508px;
+    background-color: #fff;
+}
+
+.logo_cogmotest {
+    position: absolute;
+    top: 108px;
+    left: 1810px;
+    height: 210px;
+    object-fit: contain;
+}
+
+.bottomline {
+    position: absolute;
+    top: 3250px;
+    left: 133.5px;
+    width: 2215px;
+    height: 8px;
+    background-color: #a2a2a2;
+}
+
+.bottomleft {
+    position: absolute;
+    top: 3300px;
+    left: 130px;
+    height: 40px;
+    font-family: Pretendard;
+    font-size: 34px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: -0.51px;
+    text-align: left;
+    color: #a2a2a2;
+}
+
+.bottomright {
+    position: absolute;
+    top: 3300px;
+    left: 2309px;
+    height: 40px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 34px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: -0.51px;
+    text-align: left;
+    color: #2a2a2a;
+}

@@ -1,0 +1,41 @@
+.session3 {
+    position: absolute;
+    top: 1850px;
+    margin: 0 95px;
+}
+
+.title3 {
+    display: flex;
+    font-size: 46px;
+    justify-content: space-between;
+}
+
+.divider3 {
+    width: 1925px;
+    height: 4px;
+    margin-top: 25px;
+    background-color: #0c4999;
+}
+
+.desc3 {
+    border: 1px solid gray;
+    margin-top: 20px;
+
+}
+
+.desc3 ul {
+    margin: 30px 60px 50px 60px;
+    font-family: Pretendard;
+    font-size: 38px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.32;
+    letter-spacing: -0.57px;
+    text-align: left;
+    color: #303030;
+}
+
+.desc3 ul li {
+    margin-bottom: 40px;
+}

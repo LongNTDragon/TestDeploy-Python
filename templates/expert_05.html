@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'expert_05.css' | css }}" />
+</head>
+
+<body>
+  <div class="report">
+    <span class="logo_cogmotest">
+      {% set image_name = "logo_cogmotest.png" %}
+      <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+    </span>
+
+    <span class="title"> 6. 추천 VR 인지•행동 훈련 프로그램 </span>
+
+    <div class="desc">
+      <p>CogMoTest는 아동들의 인지·행동 발달을 평가하는데 사용되는 도구입니다. 이 검사 결과를 토대로, CogMoUp이라는 VR 인지·행동 훈련 프로그램에서 사용할 추천 커리큘럼을 제공합니다. 이
+        커리큘럼은 아동의 강점과 약점을 분석하여 구성되며, 효율적인 훈련을 위한 가이드 역할을 합니다. CogMoUp은 VR 기술을 활용하여 아동들의 인지·행동 발달을 지원하는 프로그램으로, 아동들이 더욱
+        효과적으로 훈련을 받을 수 있도록 돕습니다. 이를 통해 아동들의 인지·행동 발달을 향상시키는데 유용한 도구로 활용될 수 있습니다.</p>
+    </div>
+
+    <div class="box">
+      <div class="box1">
+        {% set image_name = "message_box.png" %}
+        <img class="message_box" src="{{ image_name | img }}"
+          srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+        {% set image_name = "curriculum1.png" %}
+        <img class="message_title" src="{{ image_name | img }}"
+          srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+        {% set image_name = "rectangle_457.png" %}
+        <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+        <div class="box_lesson lesson1">
+          {% set image_name = curriculum1.lesson1.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+          {% set level = "level1" if curriculum1.lesson1.level == 1 else ("level2" if curriculum1.lesson1.level == 2
+          else "level3") %}
+          <div class="lesson_level {{ level }}">
+            Level {{ curriculum1.lesson1.level }}
+          </div>
+
+          <span class="lesson_name">{{ curriculum1.lesson1.name }}</span>
+        </div>
+
+        <div class="box_lesson lesson2">
+          {% set image_name = curriculum1.lesson2.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+          {% set level = "level1" if curriculum1.lesson2.level == 1 else ("level2" if curriculum1.lesson2.level == 2
+          else "level3") %}
+          <div class="lesson_level {{ level }}">
+            Level {{ curriculum1.lesson2.level }}
+          </div>
+
+          <span class="lesson_name">{{ curriculum1.lesson2.name }}</span>
+        </div>
+
+        <div class="box_lesson lesson3">
+          {% set image_name = curriculum1.lesson3.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+          {% set level = "level1" if curriculum1.lesson3.level == 1 else ("level2" if curriculum1.lesson3.level == 2
+          else "level3") %}
+          <div class="lesson_level {{ level }}">
+            Level {{ curriculum1.lesson3.level }}
+          </div>
+
+          <span class="lesson_name">{{ curriculum1.lesson3.name }}</span>
+        </div>
+      </div>
+
+      <div class="box2">
+        {% set image_name = "message_box.png" %}
+        <img class="message_box" src="{{ image_name | img }}"
+          srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+        {% set image_name = "curriculum2.png" %}
+        <img class="message_title" src="{{ image_name | img }}"
+          srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+        {% set image_name = "rectangle_457.png" %}
+        <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+        <div class="box_lesson lesson1">
+          {% set image_name = curriculum2.lesson1.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+          {% set level = "level1" if curriculum2.lesson1.level == 1 else ("level2" if curriculum2.lesson1.level == 2
+          else "level3") %}
+          <div class="lesson_level {{ level }}">
+            Level {{ curriculum2.lesson1.level }}
+          </div>
+
+          <span class="lesson_name">{{ curriculum2.lesson1.name }}</span>
+        </div>
+
+        <div class="box_lesson lesson2">
+          {% set image_name = curriculum2.lesson2.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+          {% set level = "level1" if curriculum2.lesson2.level == 1 else ("level2" if curriculum2.lesson2.level == 2
+          else "level3") %}
+          <div class="lesson_level {{ level }}">
+            Level {{ curriculum2.lesson2.level }}
+          </div>
+
+          <span class="lesson_name">{{ curriculum2.lesson2.name }}</span>
+        </div>
+
+        <div class="box_lesson lesson3">
+          {% set image_name = curriculum2.lesson3.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+          {% set level = "level1" if curriculum2.lesson3.level == 1 else ("level2" if curriculum2.lesson3.level == 2
+          else "level3") %}
+          <div class="lesson_level {{ level }}">
+            Level {{ curriculum2.lesson3.level }}
+          </div>
+
+          <span class="lesson_name">{{ curriculum2.lesson3.name }}</span>
+        </div>
+      </div>
+
+      <div class="box3">
+        {% set image_name = "message_box.png" %}
+        <img class="message_box" src="{{ image_name | img }}"
+          srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+        {% set image_name = "curriculum3.png" %}
+        <img class="message_title" src="{{ image_name | img }}"
+          srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+        {% set image_name = "rectangle_457.png" %}
+        <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+        <div class="box_lesson lesson1">
+          {% set image_name = curriculum3.lesson1.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+          {% set level = "level1" if curriculum3.lesson1.level == 1 else ("level2" if curriculum3.lesson1.level == 2
+          else "level3") %}
+          <div class="lesson_level {{ level }}">
+            Level {{ curriculum3.lesson1.level }}
+          </div>
+
+          <span class="lesson_name">{{ curriculum3.lesson1.name }}</span>
+        </div>
+
+        <div class="box_lesson lesson2">
+          {% set image_name = curriculum3.lesson2.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+          {% set level = "level1" if curriculum3.lesson2.level == 1 else ("level2" if curriculum3.lesson2.level == 2
+          else "level3") %}
+          <div class="lesson_level {{ level }}">
+            Level {{ curriculum3.lesson2.level }}
+          </div>
+
+          <span class="lesson_name">{{ curriculum3.lesson2.name }}</span>
+        </div>
+
+        <div class="box_lesson lesson3">
+          {% set image_name = curriculum3.lesson3.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+
+          {% set level = "level1" if curriculum3.lesson3.level == 1 else ("level2" if curriculum3.lesson3.level == 2
+          else "level3") %}
+          <div class="lesson_level {{ level }}">
+            Level {{ curriculum3.lesson3.level }}
+          </div>
+
+          <span class="lesson_name">{{ curriculum3.lesson3.name }}</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="bottomline"></span>
+
+    <span class="bottomleft">
+      {{ footer_left }}
+    </span>
+    <span class="bottomright">4</span>
+  </div>
+</body>
+
+</html>

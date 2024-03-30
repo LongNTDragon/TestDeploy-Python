@@ -1,0 +1,220 @@
+@page {
+    width: 2480px;
+    height: 3508px;
+    margin: 0mm;
+}
+
+@media print {
+    body {
+        display: inline-block;
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        transform-origin: top left;
+        transform: scale(0.48);
+        page-break-before: always;
+        page-break-after: always;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+
+.report {
+    position: relative;
+    width: 2480px;
+    height: 3508px;
+    background-color: #fff;
+}
+
+.logo_hippotnc {
+    position: absolute;
+    top: 143px;
+    left: 2041px;
+    width: 312px;
+    height: 312px;
+    object-fit: contain;
+}
+
+.logo_cogmotest {
+    position: absolute;
+    top: 473px;
+    left: 79px;
+    width: 1397px;
+    height: 785px;
+    object-fit: contain;
+}
+
+.rectangle {
+    position: absolute;
+    top: 1207px;
+    width: 2480px;
+    height: 350px;
+    object-fit: contain;
+}
+
+.title {
+    position: absolute;
+    top: 57px;
+    left: 320px;
+    height: 236px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 112px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.98;
+    text-align: left;
+    color: #fff;
+}
+
+.title_sub {
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.info_bold {
+    position: absolute;
+    top: 1731px;
+    left: 320px;
+    height: 328px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: -0.6px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.info_normal {
+    position: absolute;
+    top: 1731px;
+    left: 484px;
+    height: 328px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: -0.6px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.line {
+    position: absolute;
+    top: 2650px;
+    left: 200.5px;
+    width: 2080px;
+    height: 6px;
+    object-fit: contain;
+    background-color: #45b480;
+}
+
+.contents_title {
+    position: absolute;
+    top: 2700px;
+    left: 320px;
+    height: 50px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 42px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.9;
+    letter-spacing: -0.63px;
+    text-align: left;
+    color: #45b480;
+}
+
+.contents_left_bold {
+    position: absolute;
+    top: 2800px;
+    left: 320px;
+    height: 155px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.contents_left_normal {
+    position: absolute;
+    top: 2800px;
+    left: 392px;
+    height: 155px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.contents_right_bold {
+    position: absolute;
+    top: 2800px;
+    left: 1234px;
+    height: 155px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.contents_right_normal {
+    position: absolute;
+    top: 2800px;
+    left: 1306px;
+    height: 155px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.bottom {
+    position: absolute;
+    top: 3200px;
+    width: 2480px;
+    height: 38px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.5;
+    letter-spacing: -0.48px;
+    text-align: center;
+    color: #aeaeae;
+}
