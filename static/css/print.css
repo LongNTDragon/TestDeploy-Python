@@ -1,0 +1,17 @@
+.btn_print {
+    position: sticky;
+    top: 10px;
+    z-index: 1;
+    text-align: center;
+    background-color: #45b480;
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    font-size: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.btn_print:hover {
+    background-color: #0e9153;
+}

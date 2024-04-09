@@ -1,0 +1,471 @@
+@page {
+    width: 2480px;
+    height: 3508px;
+    margin: 0mm;
+}
+
+@media print {
+    body {
+        display: inline-block;
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        transform-origin: top left;
+        transform: scale(0.48);
+        page-break-before: always;
+        page-break-after: always;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+
+.report {
+    position: relative;
+    width: 2480px;
+    height: 3508px;
+    background-color: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    display: flex;
+}
+
+.header_left {
+    position: relative;
+    width: 1851.6px;
+    height: 275px;
+    background-color: #0c4999;
+    border-top-right-radius: 300px;
+}
+
+.header_left_number {
+    position: absolute;
+    top: 90px;
+    left: 170px;
+    font-family: Pretendard;
+    font-size: 120px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.49;
+    letter-spacing: -5.88px;
+    color: #fff;
+}
+
+.header_left_text {
+    position: absolute;
+    top: 130px;
+    left: 350px;
+    font-family: Pretendard;
+    font-size: 90px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: -1.5px;
+    color: #fff;
+}
+
+.header_right {
+    display: flex;
+}
+
+.header_right_key {
+    padding-top: 30px;
+    margin-left: 100px;
+    font-family: Pretendard;
+    font-size: 34px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.51px;
+    text-align: left;
+    color: #969696;
+}
+
+.header_right_value {
+    padding-top: 30px;
+    margin-left: 80px;
+    font-family: Pretendard;
+    font-size: 34px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.51px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.session1 {
+    position: fixed-top;
+}
+
+.title {
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: -0.75px;
+    text-align: left;
+    color: #0c4999;
+}
+
+.table1_box1 {
+    position: absolute;
+    top: 514px;
+    left: 130px;
+    width: 1340px;
+    height: 134px;
+    object-fit: contain;
+}
+
+.table1_box2 {
+    position: absolute;
+    top: 658px;
+    left: 130px;
+    width: 1340px;
+    height: 134px;
+    object-fit: contain;
+    background-color: #f6f6f6;
+}
+
+.table1_box3 {
+    position: absolute;
+    top: 792px;
+    left: 130px;
+    width: 1340px;
+    height: 134px;
+    object-fit: contain;
+}
+
+.table1_box4 {
+    position: absolute;
+    top: 938px;
+    left: 130px;
+    width: 1340px;
+    height: 134px;
+    object-fit: contain;
+    background-color: #f6f6f6;
+}
+
+.table1_box5 {
+    position: absolute;
+    top: 1072px;
+    left: 130px;
+    width: 1340px;
+    height: 134px;
+    object-fit: contain;
+}
+
+.table1_box6 {
+    position: absolute;
+    top: 1218px;
+    left: 130px;
+    width: 1340px;
+    height: 134px;
+    object-fit: contain;
+    background-color: #f6f6f6;
+}
+
+.table1_1 {
+    position: absolute;
+    top: 47px;
+    left: 91px;
+    height: 43px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #303030;
+}
+
+.table1_2 {
+    position: absolute;
+    top: 47px;
+    left: 374px;
+    height: 43px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #303030;
+}
+
+.table1_3 {
+    position: absolute;
+    top: 47px;
+    left: 664px;
+    height: 43px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #303030;
+}
+
+.table1_4 {
+    position: absolute;
+    top: 47px;
+    left: 844px;
+    height: 43px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #303030;
+}
+
+.table1_5 {
+    position: absolute;
+    top: 47px;
+    left: 1024px;
+    height: 43px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #303030;
+}
+
+.table1_6 {
+    position: absolute;
+    top: 47px;
+    left: 1204px;
+    height: 43px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.54px;
+    text-align: left;
+    color: #303030;
+}
+
+.hexagon_box1 {
+    position: absolute;
+    top: 591px;
+    left: 1870px;
+    width: 130px;
+    height: 85px;
+}
+
+.hexagon_box2 {
+    position: absolute;
+    top: 751px;
+    left: 2178px;
+    width: 130px;
+    height: 85px;
+}
+
+.hexagon_box3 {
+    position: absolute;
+    top: 1094px;
+    left: 2178px;
+    width: 130px;
+    height: 85px;
+}
+
+.hexagon_box4 {
+    position: absolute;
+    top: 1224px;
+    left: 1870px;
+    width: 130px;
+    height: 85px;
+}
+
+.hexagon_box5 {
+    position: absolute;
+    top: 1094px;
+    left: 1562px;
+    width: 130px;
+    height: 85px;
+}
+
+.hexagon_box6 {
+    position: absolute;
+    top: 751px;
+    left: 1562px;
+    width: 130px;
+    height: 85px;
+}
+
+.hexagon_text {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 130px;
+    font-family: Pretendard;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.03;
+    letter-spacing: -0.45px;
+    text-align: center;
+    color: #303030;
+}
+
+.hexagon_value {
+    position: absolute;
+    top: 29px;
+    left: 0px;
+    width: 130px;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.33;
+    letter-spacing: -0.54px;
+    text-align: center;
+    color: #303030;
+}
+
+.hexagon_graph {
+    position: absolute;
+    top: 698px;
+    left: 1705px;
+    width: 460px;
+    height: 510px;
+    z-index: 10;
+    object-fit: contain;
+}
+
+.hexagon1 {
+    position: absolute;
+    top: 710px;
+    left: 1725px;
+    width: 420px;
+    height: 485px;
+    z-index: 2;
+}
+
+.hexagon2 {
+    position: absolute;
+    top: 755px;
+    left: 1765px;
+    width: 340px;
+    height: 390px;
+    z-index: 4;
+}
+
+.hexagon3 {
+    position: absolute;
+    top: 840px;
+    left: 1840px;
+    width: 190px;
+    height: 220px;
+    z-index: 6;
+}
+
+.hexagon4 {
+    position: absolute;
+    top: 865px;
+    left: 1860px;
+    width: 150px;
+    height: 170px;
+    z-index: 8;
+}
+
+.session2 {
+    position: absolute;
+    top: 1450px;
+    left: 100px;
+}
+
+.session2 .title2 {
+    display: flex;
+    font-size: 46px;
+    justify-content: space-between;
+}
+
+.session2 .divider2 {
+    width: 2020px;
+    height: 4px;
+    margin-top: 25px;
+    background-color: #0c4999;
+}
+
+.desc_area {
+    width: 2180px;
+    height: 200px;
+    margin: 33px 0 30px 0;
+    padding: 42px 73px 42px 50px;
+    border-radius: 20px;
+    background-color: #f8f8f8;
+    display: flex;
+}
+
+.desc_area .circle {
+    width: 90px;
+    padding: 55px;
+    background-color: #ffbc20;
+    border-radius: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.circle span {
+    font-family: Pretendard;
+    font-size: 42px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.desc_text_left {
+    margin-left: 45px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.desc_text_left .desc_title {
+    font-family: Pretendard;
+    font-size: 44px;
+    font-weight: 600;
+    color: #2a2a2a;
+}
+
+.desc_text_left .desc_desc {
+    width: 1900px;
+    margin-top: 15px;
+    font-family: Pretendard;
+    font-size: 30px;
+    color: #303030;
+}

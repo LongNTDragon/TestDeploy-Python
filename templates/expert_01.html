@@ -5,6 +5,7 @@
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}">
     <link rel="stylesheet" type="text/css" href="{{ 'expert_01.css' | css }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'print.css' | css }}">
 </head>
 
 <body>
@@ -73,7 +74,9 @@
         <span class="bottom">
             ※CogMoTest는 의학적인 치료나 진단을 위한 도구가 아님※
         </span>
+        <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
     </div>
 </body>
+<script src="../static/js/print.js"></script>
 
 </html>

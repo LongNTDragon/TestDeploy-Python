@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="{{ 'expert_02.css' | css }}" />
   <link rel="stylesheet" type="text/css" href="{{ 'expert_02_section1.css' | css }}" />
   <link rel="stylesheet" type="text/css" href="{{ 'expert_02_section2.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'print.css' | css }}">
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/highcharts-more.js"></script>
 </head>
@@ -347,7 +348,10 @@
       text
     </span>
     <span class="bottomright">1</span>
+
+    <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
   </div>
 </body>
+<script src="../static/js/print.js"></script>
 
 </html>

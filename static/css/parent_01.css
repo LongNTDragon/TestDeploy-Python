@@ -1,0 +1,213 @@
+@page {
+    width: 2480px;
+    height: 3508px;
+    margin: 0mm;
+}
+
+@media print {
+    body {
+        display: inline-block;
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        transform-origin: top left;
+        transform: scale(0.48);
+        page-break-before: always;
+        page-break-after: always;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+
+.report {
+    position: relative;
+    width: 2480px;
+    height: 3508px;
+    background-color: #fff;
+}
+
+.logo_transparent_back_2 {
+    position: absolute;
+    width: 351px;
+    height: 351px;
+    left: 50px;
+}
+
+
+.logohippbrand {
+    position: absolute;
+    top: 554px;
+    right: 368px;
+    left: 204px;
+    bottom: 956px;
+    width: 1119px;
+    height: 327px;
+    object-fit: contain;
+}
+
+.chuduoicung {
+    position: absolute;
+    width: 815px;
+    height: 38px;
+    margin: 62px 722px 0 139px;
+    top: 2900px;
+    left: 533px;
+    bottom: 61px;
+    right: 833px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.5;
+    letter-spacing: -0.48px;
+    text-align: center;
+    color: #aeaeae;
+}
+
+.contents_right_bold {
+    width: 719px;
+    height: 193px;
+    margin: -224px -65px -0 -0;
+    font-family: Pretendard;
+    font-size: 38px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.95;
+    letter-spacing: -0.57px;
+    text-align: left;
+    color: #2a2a2a;
+    float: right;
+}
+
+.contents_left_bold {
+    width: 813px;
+    height: 193px;
+    margin: 46px 215px 0 0;
+    font-family: Pretendard;
+    font-size: 38px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.95;
+    letter-spacing: -0.57px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.contents_title {
+    width: 534px;
+    height: 50px;
+    margin: 0 494px 46px 0;
+    font-family: Pretendard;
+    font-size: 42px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.9;
+    letter-spacing: -0.63px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.khunggiua {
+    position: absolute;
+    height: 368px;
+    top: 2474px;
+    left: 163px;
+    right: 139px;
+    bottom: 813px;
+    width: 236px;
+    width: 1556px;
+    height: 288px;
+    padding: 77px 276px 86px 131px;
+    border-radius: 35px;
+    background-color: #f6f6f6;
+}
+
+.anhgiua {
+    position: absolute;
+    height: 863px;
+    top: 1611px;
+    left: 714px;
+    right: 139px;
+    bottom: 813px;
+    width: 1443px;
+}
+
+.info_normal {
+    width: 236px;
+    position: absolute;
+    height: 368px;
+    top: 1231px;
+    left: 387px;
+    right: 139px;
+    bottom: 813px;
+    width: 236px;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: -0.6px;
+    text-align: left;
+    color: #000;
+}
+
+.info_bold {
+    width: 103px;
+    position: absolute;
+    height: 368px;
+    top: 1231px;
+    left: 204px;
+    right: 61px;
+    bottom: 813px;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: -0.6px;
+    text-align: left;
+    color: #575757;
+}
+
+.chuatieude2 {
+    width: 584px;
+    height: 315px;
+    font-family: Pretendard;
+    font-size: 130px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: -1.95px;
+    text-align: left;
+    color: #2f2f2f;
+}
+
+.khungtieude {
+    position: absolute;
+    top: 795px;
+    right: 157px;
+    left: 204px;
+    bottom: 48px;
+    width: 1119px;
+    height: 327px;
+    object-fit: contain;
+}
+
+.logohippbrand {
+    position: absolute;
+    top: 554px;
+    right: 368px;
+    left: 204px;
+    bottom: 956px;
+    width: 1119px;
+    height: 327px;
+    object-fit: contain;
+}

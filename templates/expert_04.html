@@ -5,6 +5,7 @@
   <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
   <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}" />
   <link rel="stylesheet" type="text/css" href="{{ 'expert_04.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'print.css' | css }}" />
 </head>
 
 <body>
@@ -64,7 +65,9 @@
       {{ footer_left }}
     </span>
     <span class="bottomright">3</span>
+    <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
   </div>
 </body>
+<script src="../static/js/print.js"></script>
 
 </html>

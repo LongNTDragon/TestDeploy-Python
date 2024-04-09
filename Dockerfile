@@ -1,4 +1,4 @@
-FROM python 3.11
+FROM python:3.11
 
 WORKDIR /app
 
@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "run.py"]
+CMD gunicorn --bind 0.0.0.0:8888 run:app

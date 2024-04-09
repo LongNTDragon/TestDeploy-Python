@@ -55,6 +55,9 @@ def show_template(x):
 
     return render_template(f"{x}.html", **data)
 
+@app.route('/')
+def show_home():
+    return render_template(f"index.html")
 
 if __name__ == '__main__':
     app.run(port=8888, debug=True)

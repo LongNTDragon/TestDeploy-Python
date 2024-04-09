@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'print.css' | css }}">
+  <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'parent_02.css' | css }}" />
+</head>
+
+<body>
+  <div class="report">
+    <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
+
+    <div class="header">
+      <span class="text">HippBrainCheck™ <span class="text-child">에 대하여</span></span>
+
+      {% set image_name = "parent_logo.png" %}
+      <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+    </div>
+
+    <div class="session1">
+      <ul>
+        <li>{{HippBrainCheck.0}}</li>
+        <li>{{HippBrainCheck.1}}</li>
+        <li>{{HippBrainCheck.2}}</li>
+      </ul>
+    </div>
+
+    <div class="session2">
+      <div class="title title2">
+        <span> 검사 과제 종류 및 진행 순서 </span>
+        <div class="divider2"></div>
+      </div>
+      <div class="box1">
+        <div class="session2-title1">
+          <span> 저 학 년 </span>
+        </div>
+
+        <div class="box_lesson">
+          {% set image_name = curriculum1.lesson1.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+          <div class="lesson_level">{{ curriculum1.lesson1.title }}</div>
+          <span class="lesson_name">{{ curriculum1.lesson1.desc }}</span>
+        </div>
+
+        <div class="box_lesson">
+          {% set image_name = curriculum1.lesson2.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+          <div class="lesson_level">{{ curriculum1.lesson2.title }}</div>
+          <span class="lesson_name">{{ curriculum1.lesson2.desc }}</span>
+        </div>
+
+        <div class="box_lesson">
+          {% set image_name = curriculum1.lesson3.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+          <div class="lesson_level">{{ curriculum1.lesson3.title }}</div>
+          <span class="lesson_name">{{ curriculum1.lesson3.desc }}</span>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="session2-title2">
+          <span> 고 학 년 </span>
+        </div>
+        <div class="box_lesson">
+          {% set image_name = curriculum2.lesson1.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+          <div class="lesson_level">{{ curriculum2.lesson1.title }}</div>
+          <span class="lesson_name">{{ curriculum2.lesson1.desc }}</span>
+        </div>
+
+        <div class="box_lesson">
+          {% set image_name = curriculum2.lesson2.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+          <div class="lesson_level">{{ curriculum2.lesson2.title }}</div>
+
+          <span class="lesson_name">{{ curriculum2.lesson2.desc }}</span>
+        </div>
+
+        <div class="box_lesson">
+          {% set image_name = curriculum2.lesson3.image %}
+          <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
+          <div class="lesson_level">{{ curriculum2.lesson3.title }}</div>
+
+          <span class="lesson_name">{{ curriculum2.lesson3.desc }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="session3">
+      <div class="title title2">
+        <span> HippBrainCheck™길잡이 </span>
+        <div class="divider2"></div>
+      </div>
+      <ul>
+        <li>{{HippBrainCheck2.0}}</li>
+        <li>{{HippBrainCheck2.1}}</li>
+        <li>{{HippBrainCheck2.2}}</li>
+        <li>{{HippBrainCheck2.3}}</li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script src="../static/js/print.js"></script>
+
+</html>

@@ -7,10 +7,12 @@
   <link rel="stylesheet" type="text/css" href="{{ 'expert_03.css' | css }}" />
   <link rel="stylesheet" type="text/css" href="{{ 'expert_03_section1.css' | css }}" />
   <link rel="stylesheet" type="text/css" href="{{ 'expert_03_section2.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'print.css' | css }}" />
 </head>
 
 <body>
   <div class="report">
+    <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
     <span class="logo_cogmotest">
       {% set image_name = "logo_cogmotest.png" %}
       <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x" />
@@ -171,5 +173,6 @@
     <span class="bottomright">2</span>
   </div>
 </body>
+<script src="../static/js/print.js"></script>
 
 </html>
