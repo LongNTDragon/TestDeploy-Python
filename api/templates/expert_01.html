@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="http://127.0.0.1:8888">
+    <meta charset="utf-8">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'expert_01.css' | css }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}">
+</head>
+
+<body>
+    <div class="report">
+        <span class="logo_hippotnc">
+            {% set image_name = "logo_transparent_back_2.png" %}
+            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+        </span>
+
+        <span class="logo_cogmotest">
+            {% set image_name = "logo_cogmotest_large_1.png" %}
+            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+        </span>
+
+        <div class="rectangle">
+            {% set image_name = "rectangle_289.png" %}
+            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+            <span class="title">
+                검사 결과 분석 보고서<br>
+                <span class="title_sub">
+                    (전문가용)
+                </span>
+            </span>
+        </div>
+
+        <span class="info_bold">
+            기관명<br>
+            검사일<br>
+            성명<br>
+            나이<br>
+            성별
+        </span>
+        <span class="info_normal">
+            {{ institution }}<br>
+            {{ date }}<br>
+            {{ name }}<br>
+            {{ age }}<br>
+            {{ gender }}
+        </span>
+
+        <span class="line"></span>
+
+        <span class="contents_title">
+            CogMoTest 보고서 구성
+        </span>
+
+        <span class="contents_left_bold">
+            1<br>
+            2<br>
+            3
+        </span>
+        <span class="contents_left_normal">
+            영역별 세부 지표 분석<br>
+            행동 패턴 분석<br>
+            주의 분산 / 산만함
+        </span>
+        <span class="contents_right_bold">
+            4<br>
+            5
+        </span>
+        <span class="contents_right_normal">
+            활동 수준<br>
+            시각 및 청각적 주의력
+        </span>
+
+        <span class="bottom">
+            ※CogMoTest는 의학적인 치료나 진단을 위한 도구가 아님※
+        </span>
+    </div>
+</body>
+
+</html>

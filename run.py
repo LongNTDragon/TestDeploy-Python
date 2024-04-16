@@ -2,6 +2,7 @@ import json
 import os
 
 from flask import Flask, jsonify, render_template, request, url_for
+from api.controller import controller
 
 app = Flask(__name__)
 TMP_PATH = os.path.join(app.root_path, "static", "cache", "")
@@ -60,4 +61,5 @@ def show_home():
     return render_template(f"index.html")
 
 if __name__ == '__main__':
+    app.register_blueprint(controller)
     app.run(port=8888, debug=True)

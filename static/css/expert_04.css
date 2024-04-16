@@ -26,6 +26,11 @@
     background-color: #fff;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .logo_cogmotest {
     position: absolute;
     top: 108px;
