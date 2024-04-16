@@ -61,5 +61,5 @@ def show_home():
     return render_template(f"index.html")
 
 if __name__ == '__main__':
-    app.register_blueprint(controller)
+    controller(app)
     app.run(port=8888, debug=True)
