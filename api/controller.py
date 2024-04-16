@@ -3,6 +3,10 @@ from .service import validateInfo, reportPdf
 
 controller = Blueprint("controller", __name__)
 
+@controller.route("/hello")
+def sayHi():
+    return "Hello world"
+
 @controller.route("/expert_01", methods=['POST'])
 def expert01():
     messageArr = []
