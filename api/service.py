@@ -1,6 +1,6 @@
 import os
 import pdfkit
-from flask import render_template_string, send_file, make_response
+from flask import render_template_string, send_file
 
 def validateInfo(attribute, object, messageArr):
     if attribute not in object:
@@ -11,7 +11,7 @@ def reportPdf(template_name, data):
     with open(html_path, 'r', encoding='utf-8') as f:
         html_template = f.read()
     html_content = render_template_string(html_template, **data)
-    
+
     options = {
         'page-size': 'A4',
         "page-width": "20.55in",
@@ -21,6 +21,9 @@ def reportPdf(template_name, data):
         'margin-left': '0mm',
         'margin-right': '0mm'
     }   
+    
+    #config for production
+    # os.path.join(os.path.splitdrive(os.path.abspath('.'))[0], '/bin/wkhtmltopdf')    
     config = pdfkit.configuration(wkhtmltopdf = os.path.abspath('wkhtmltox/bin/wkhtmltopdf.exe'))
     pdf = pdfkit.from_string(html_content, False, options=options, configuration=config)
 
