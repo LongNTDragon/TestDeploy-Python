@@ -8,13 +8,13 @@ def section1_table_circle(data):
     for factor in [f"factor{x+1}" for x in range(6)]:
         value = data[factor]
         if value >= 80:
-            data[f"{factor}_circle"] = ["", "", "●", ""]
+            data[f"{factor}_circle"] = ["", "", "✔", ""]
         elif value >= 45:
-            data[f"{factor}_circle"] = ["", "", "●", ""]
+            data[f"{factor}_circle"] = ["", "", "✔", ""]
         elif value >= 35:
-            data[f"{factor}_circle"] = ["", "● ", "", ""]
+            data[f"{factor}_circle"] = ["", "✔ ", "", ""]
         else:
-            data[f"{factor}_circle"] = ["●", "", "", ""]
+            data[f"{factor}_circle"] = ["✔", "", "", ""]
 
 @exception_handler
 def make_parent_03(base_url, options, path):
