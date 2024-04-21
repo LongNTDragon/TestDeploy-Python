@@ -2,18 +2,17 @@
 <html>
 
 <head>
-    <base href="http://127.0.0.1:8888">
+    <base href="https://report.hippotnc.com">
     <meta charset="utf-8">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" type="text/css" href="{{ 'expert_01.css' | css }}">
-    <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ 'expert_01.css' | css }}"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}"> -->
 </head>
 
 <body>
     <div class="report">
         <span class="logo_hippotnc">
-            {% set image_name = "logo_transparent_back_2.png" %}
-            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+            <img src="/static/assets/images/logo_transparent_back_2.png">
         </span>
 
         <span class="logo_cogmotest">
