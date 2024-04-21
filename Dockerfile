@@ -1,5 +1,9 @@
 FROM python:3.12.1
 
+RUN apt-get update
+
+RUN apt-get install -y wkhtmltopdf
+
 WORKDIR /app
 
 COPY requirements.txt .
