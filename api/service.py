@@ -7,28 +7,36 @@ def validateInfo(attribute, object, messageArr):
         messageArr.append(attribute + ' is required.')
 
 def reportPdf(template_name, data):
-    html_path = os.path.join(os.path.abspath('api/templates'), template_name) 
+    absolute_path = '/app'
+
+    #production
+    # html_path = os.path.join(os.path.abspath('api/templates'), template_name)
+    html_path = os.path.join(os.path.abspath('api/templates_dev'), template_name) 
     with open(html_path, 'r', encoding='utf-8') as f:
         html_template = f.read()
-    html_content = render_template_string(html_template, **data)
-
+    html_content = render_template_string(html_template, **data, absolute_path=absolute_path)
+    
     options = {
+        #local
+        'page-width': '25.83in',
+        'page-height': '36.54in',
+        
         'page-size': 'A4',
-        "page-width": "20.55in",
-        "page-height": "30in",
         'margin-top': '0mm',
         'margin-bottom': '0mm',
         'margin-left': '0mm',
-        'margin-right': '0mm'
-    }   
-    
-    #config for production
-    # os.path.join(os.path.splitdrive(os.path.abspath('.'))[0], '/bin/wkhtmltopdf')    
-    config = pdfkit.configuration(wkhtmltopdf = os.path.abspath('wkhtmltox/bin/wkhtmltopdf.exe'))
-    pdf = pdfkit.from_string(html_content, False, options=options, configuration=config)
+        'margin-right': '0mm',
+        'enable-local-file-access': None
+    }
 
+    #production
+    #config = pdfkit.configuration(wkhtmltopdf = os.path.join(os.path.splitdrive(os.path.abspath('.'))[0], '/usr/bin/wkhtmltopdf'))
+    config = pdfkit.configuration(wkhtmltopdf = r"C:\Users\Admin\Downloads\Korean\wkhtmltox\bin\wkhtmltopdf.exe")
+    
+    pdf = pdfkit.from_string(html_content, options=options, configuration=config)
+     
     pdf_path = os.path.join(os.path.abspath('api'), 'report.pdf') 
     with open(pdf_path, 'wb') as f:
         f.write(pdf)
-
+    
     return send_file(pdf_path, as_attachment=True)

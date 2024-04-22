@@ -1,10 +1,7 @@
 from flask import request
 from .service import validateInfo, reportPdf
 
-def sayHi():
-    return "Hello world"
-
-def report01():
+def expert01():
     messageArr = []
     validateInfo('institution', request.json, messageArr)
     validateInfo('date', request.json, messageArr)

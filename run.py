@@ -2,7 +2,7 @@ import json
 import os
 
 from flask import Flask, jsonify, render_template, request, url_for
-from api.controller import sayHi, report01
+from api.controller import expert01
 
 app = Flask(__name__)
 TMP_PATH = os.path.join(app.root_path, "static", "cache", "")
@@ -60,17 +60,9 @@ def show_template(x):
 def show_home():
     return render_template(f"index.html")
 
-@app.route("/hello")
-def hello():
-    return sayHi()
-
 @app.route("/expert_01", methods=['POST'])
-def expert01():
-    return report01()
-
-@app.route("/expert_test_01")
-def expertTest01():
-    return report01()
+def reportExpert01():
+    return expert01()
 
 if __name__ == '__main__':
     app.run(port=8888, debug=True)

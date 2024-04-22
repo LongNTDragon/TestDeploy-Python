@@ -2,27 +2,28 @@
 <html>
 
 <head>
+    <base href="http://127.0.0.1:8888">
     <meta charset="utf-8">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'expert_01.css' | css }}">
-    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'pretendard-font-wkhtmltopdf.css' | css }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'expert_01.css' | css }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}">
 </head>
 
 <body>
     <div class="report">
         <span class="logo_hippotnc">
             {% set image_name = "logo_transparent_back_2.png" %}
-            <img src="{{ absolute_path }}{{ image_name | img }}">
+            <img src="{{ image_name | img }}">
         </span>
 
         <span class="logo_cogmotest">
             {% set image_name = "logo_cogmotest_large_1.png" %}
-            <img src="{{ absolute_path }}{{ image_name | img }}">
+            <img src="{{ image_name | img }}">
         </span>
 
         <div class="rectangle">
             {% set image_name = "rectangle_289.png" %}
-            <img src="{{ absolute_path }}{{ image_name | img }}">
+            <img src="{{ image_name | img }}">
             <span class="title">
                 검사 결과 분석 보고서<br>
                 <span class="title_sub">
