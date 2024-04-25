@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'pretendard-font-wkhtmltopdf.css' | css }}">
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'expert_02.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'expert_02_section1.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'expert_02_section2.css' | css }}" />
+</head>
+
+<body>
+  <div class="report">
+    <span class="logo_cogmotest">
+      {% set image_name = "logo_cogmotest.png" %}
+      <img src="{{ absolute_path }}{{ image_name | img }}" />
+    </span>
+
+    <span class="title1"> 1. 영역별 세부 지표 분석 </span>
+
+    <div class="table1_bar2">
+      {% set image_name = "rectangle_300.png" %}
+      <img src="{{ absolute_path }}{{ image_name | img }}" />
+
+      <span class="table1_bar2_1">우수</span>
+      <span class="table1_bar2_2">보통</span>
+      <span class="table1_bar2_3">경계</span>
+      <span class="table1_bar2_4">미흡</span>
+    </div>
+
+    <div class="table1_bar1">
+      {% set image_name = "rectangle_76.png" %}
+      <img src="{{ absolute_path }}{{ image_name | img }}" />
+
+      <span class="table1_bar1_1">수행능력</span>
+      <span class="table1_bar1_2">백분위</span>
+    </div>
+
+    <div class="table1_box1">
+      <span class="table1_1">주의집중력</span>
+      <span class="table1_2">{{ factor1 }}%</span>
+      {% set r1 = "●" if factor1 > 75 else "" %}
+      {% set r2 = "●" if (factor1 > 50 and not factor1 > 75) else "" %}
+      {% set r3="●" if (factor1 > 25 and not factor1 > 50)else "" %}
+      {% set r4="●" if not factor1 > 25 else "" %}
+      <span class="table1_3">{{ r1 }}</span>
+      <span class="table1_4">{{ r2 }}</span>
+      <span class="table1_5">{{ r3 }}</span>
+      <span class="table1_6">{{ r4 }}</span>
+    </div>
+
+    <div class="table1_box2">
+      <span class="table1_1">작업기억력</span>
+      <span class="table1_2">{{ factor2 }}%</span>
+      {% set r1 = "●" if factor2 > 75 else "" %}
+      {% set r2 = "●" if (factor2 > 50 and not factor2 > 75) else "" %}
+      {% set r3="●" if (factor2 > 25 and not factor2 > 50)else "" %}
+      {% set r4="●" if not factor2 > 25 else "" %}
+      <span class="table1_3">{{ r1 }}</span>
+      <span class="table1_4">{{ r2 }}</span>
+      <span class="table1_5">{{ r3 }}</span>
+      <span class="table1_6">{{ r4 }}</span>
+    </div>
+
+    <div class="table1_box3">
+      <span class="table1_1">집행기능</span>
+      <span class="table1_2">{{ factor3 }}%</span>
+      {% set r1 = "●" if factor3 > 75 else "" %}
+      {% set r2 = "●" if (factor3 > 50 and not factor3 > 75) else "" %}
+      {% set r3="●" if (factor3 > 25 and not factor3 > 50)else "" %}
+      {% set r4="●" if not factor3 > 25 else "" %}
+      <span class="table1_3">{{ r1 }}</span>
+      <span class="table1_4">{{ r2 }}</span>
+      <span class="table1_5">{{ r3 }}</span>
+      <span class="table1_6">{{ r4 }}</span>
+    </div>
+
+    <div class="table1_box4">
+      <span class="table1_1">행동조절력</span>
+      <span class="table1_2">{{ factor4 }}%</span>
+      {% set r1 = "●" if factor4 > 75 else "" %}
+      {% set r2 = "●" if (factor4 > 50 and not factor4 > 75) else "" %}
+      {% set r3="●" if (factor4 > 25 and not factor4 > 50)else "" %}
+      {% set r4="●" if not factor4 > 25 else "" %}
+      <span class="table1_3">{{ r1 }}</span>
+      <span class="table1_4">{{ r2 }}</span>
+      <span class="table1_5">{{ r3 }}</span>
+      <span class="table1_6">{{ r4 }}</span>
+    </div>
+
+    <div class="table1_box5">
+      <span class="table1_1">사회성</span>
+      <span class="table1_2">{{ factor5 }}%</span>
+      {% set r1 = "●" if factor5 > 75 else "" %}
+      {% set r2 = "●" if (factor5 > 50 and not factor5 > 75) else "" %}
+      {% set r3="●" if (factor5 > 25 and not factor5 > 50)else "" %}
+      {% set r4="●" if not factor5 > 25 else "" %}
+      <span class="table1_3">{{ r1 }}</span>
+      <span class="table1_4">{{ r2 }}</span>
+      <span class="table1_5">{{ r3 }}</span>
+      <span class="table1_6">{{ r4 }}</span>
+    </div>
+
+    <div class="table1_box6">
+      <span class="table1_1">충동자제력</span>
+      <span class="table1_2">{{ factor6 }}%</span>
+      {% set r1 = "●" if factor6 > 75 else "" %}
+      {% set r2 = "●" if (factor6 > 50 and not factor6 > 75) else "" %}
+      {% set r3="●" if (factor6 > 25 and not factor6 > 50)else "" %}
+      {% set r4="●" if not factor6 > 25 else "" %}
+      <span class="table1_3">{{ r1 }}</span>
+      <span class="table1_4">{{ r2 }}</span>
+      <span class="table1_5">{{ r3 }}</span>
+      <span class="table1_6">{{ r4 }}</span>
+    </div>
+
+    <div>
+      <div class="hexagon_box1">
+        <span class="hexagon_text">주의집중력</span>
+        <span class="hexagon_value">{{ factor1 }}%</span>
+      </div>
+
+      <div class="hexagon_box2">
+        <span class="hexagon_text">작업기억력</span>
+        <span class="hexagon_value">{{ factor2 }}%</span>
+      </div>
+
+      <div class="hexagon_box3">
+        <span class="hexagon_text">집행기능</span>
+        <span class="hexagon_value">{{ factor3 }}%</span>
+      </div>
+
+      <div class="hexagon_box4">
+        <span class="hexagon_text">행동조절력</span>
+        <span class="hexagon_value">{{ factor4 }}%</span>
+      </div>
+
+      <div class="hexagon_box5">
+        <span class="hexagon_text">사회성</span>
+        <span class="hexagon_value">{{ factor5 }}%</span>
+      </div>
+
+      <div class="hexagon_box6">
+        <span class="hexagon_text">충동자제력</span>
+        <span class="hexagon_value">{{ factor6 }}%</span>
+      </div>
+
+      <div class="hexagon_graph">
+        {% set image_name = "hexagon.png" %}
+        <img style="width: 95%; position: absolute; top: 70px; left: 10px;"
+          src="{{ absolute_path }}{{ image_name | img }}" />
+      </div>
+
+      {% set image_name = "hexagon1_1.png" %}
+      <img class="hexagon1" src="{{ absolute_path }}{{ image_name | img }}" />
+
+      {% set image_name = "hexagon1_2.png" %}
+      <img class="hexagon2" src="{{ absolute_path }}{{ image_name | img }}" />
+
+      {% set image_name = "hexagon1_3.png" %}
+      <img class="hexagon3" src="{{ absolute_path }}{{ image_name | img }}" />
+
+      {% set image_name = "hexagon1_4.png" %}
+      <img class="hexagon4" src="{{ absolute_path }}{{ image_name | img }}" />
+    </div>
+
+    <span class="title2"> 2. 행동 패턴 분석 </span>
+
+    <div class="background2">
+      <div>
+        <span class="table2_title table2_title1">행동 패턴 분석 팩터</span>
+        <span class="table2_title table2_title2">Z-Score</span>
+        <span class="table2_title table2_title3">Percentile</span>
+      </div>
+
+      <div class="table2_line1">
+        <span class="table2_text table2_text1">Prompted Movement</span>
+        <span class="table2_text table2_text2">{{ prompted }}</span>
+        <span class="table2_text table2_text3">{{ prompted_percentile }}%</span>
+      </div>
+
+      <div class="table2_line2">
+        <span class="table2_text table2_text1">Unprompted Movement</span>
+        <span class="table2_text table2_text2">{{ unprompted }}</span>
+        <span class="table2_text table2_text3">{{ unprompted_percentile }}%</span>
+      </div>
+
+      <div class="table2_line3">
+        <span class="table2_text table2_text1">Comprehensive Score</span>
+        <span class="table2_text table2_text2">{{ comprehensive }}</span>
+        <span class="table2_text table2_text3">{{ comprehensive_percentile }}%</span>
+      </div>
+
+      <div class="table2_line4">
+        <span class="table2_line4_text table2_line4_text1">행동 유형</span>
+        <span class="table2_line4_text table2_line4_text2">절제 행동 우세형</span>
+      </div>
+
+      <div class="bar2">
+        <span class="bar2_text bar2_text1">Prompted Movement</span>
+        <span class="bar2_text bar2_text2">Unprompted Movement</span>
+        <span class="bar2_text bar2_text3">Comprehensive Score</span>
+        <span style="position: absolute; top: 7px; left: 330px;">
+          {% set image_name = "bar_gradient.png" %}
+          <img src="{{ absolute_path }}{{ image_name | img }}" />
+        </span>
+        <span style="position: absolute; top: 72px; left: 330px;">
+          {% set image_name = "bar_gradient.png" %}
+          <img src="{{ absolute_path }}{{ image_name | img }}" />
+        </span>
+        <span style="position: absolute; top: 140px; left: 330px;">
+          {% set image_name = "bar_gradient.png" %}
+          <img src="{{ absolute_path }}{{ image_name | img }}" />
+        </span>
+      </div>
+    </div>
+
+    <div class="graph2">
+      {% set image_name = "graph_section2.png" %}
+      <img src="{{ absolute_path }}{{ image_name | img }}" />
+    </div>
+
+    <div>
+      <span class="desc2_title desc2_title1">과잉행동 우세형</span>
+
+      <span class="desc2_text desc2_text1">
+        아동은 미션을 수행하면서 과제와 상관없는 불필요한 움직임을 보였습니다.
+        가정에서는 지시사항을 놓치는 경우가 흔해서 반복적인 설명이 요구될 수
+        있습니다.<br />
+        학교, 학원에서는 부주의한 실수가 많아 학업적 성취가 저조할 수
+        있습니다.
+      </span>
+    </div>
+
+    <div>
+      <span class="desc2_title desc2_title2">행동 우세형</span>
+
+      <span class="desc2_text desc2_text2">
+        아동은 미션을 수행할 때 필요한 움직임을 보였지만, 그만큼 불필요한
+        모습도 보였습니다. 가정이나 학교에서
+        <span>주의집중 할 수 있지만, 종종 쉽게 산만해 질 수 있습니다.<br />
+          이러한 비일관적인 모습으로 인하여 과목이나 아이의 컨디션에 따라 수행
+          편차를 보일 수 있습니다.</span>
+      </span>
+    </div>
+
+    <div>
+      <span class="desc2_title desc2_title3">행동 절제형</span>
+
+      <span class="desc2_text desc2_text3">
+        아동은 미션을 수행할 때 움직임을 거의 보이지 않았습니다. 이러한 행동
+        패턴이 강점으로 발휘될 경우에는 조심스럽고 신중하여 실수가 적을 수
+        있습니다. 그러나<br />
+        단점으로 작용할 때는 우유부단하고 위축되어 있기 때문에 적극성은 부족할
+        수 있습니다.
+        <span>본인의 실제 능력에 비해 결과물은 미흡할 수 있습니다.</span>
+      </span>
+    </div>
+
+    <div>
+      <span class="desc2_title desc2_title4">절제 행동 우세형</span>
+
+      <span class="desc2_text desc2_text4">
+        아동은 미션을 수행할 때 과제에 필요한 움직임만 보였습니다. 평상시에도
+        목표나 계획에 따라 효율적으로 행동하여 안정적인 모습을 보이겠습니다.
+      </span>
+    </div>
+
+    <span class="bottomline"></span>
+
+    <span class="bottomleft">
+      {{ date }} / {{ name }} / {{ age }} / {{ gender }}
+    </span>
+    <span class="bottomright">1</span>
+  </div>
+</body>
+
+</html>

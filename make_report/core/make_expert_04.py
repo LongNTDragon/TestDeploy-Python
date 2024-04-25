@@ -2,9 +2,9 @@
 from flask import json
 import requests
 import pdfkit
-import matplotlib.pyplot as plt
-import mpld3
-import numpy as np
+import matplotlib.pyplot as plt # type: ignore
+import mpld3 # type: ignore
+import numpy as np # type: ignore
 from util.exception_handler import exception_handler
 from datetime import date
 

@@ -3,4 +3,3 @@ gunicorn
 pdfkit
 matplotlib
 mpld3
-numpy
