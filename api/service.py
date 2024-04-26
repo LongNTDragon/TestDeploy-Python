@@ -20,9 +20,9 @@ def reportPdf(template_name, data):
     
     options = {
         #local
-        'page-width': '25in',
-        'page-height': '36in',
-        
+        'page-width': '25.83in',
+        'page-height': '36.54in',
+
         'page-size': 'A4',
         'margin-top': '0mm',
         'margin-bottom': '0mm',
@@ -81,7 +81,7 @@ def drawScatterPlot(x, y, image_name):
     x_coordinate = x
     y_coordinate = y
 
-    plt.figure(figsize=(5, 5))
+    plt.figure(figsize=(10, 9))
 
     plt.scatter(x_coordinate, y_coordinate, color='green', zorder=2)
     plt.plot([x_coordinate, x_coordinate], [-x_coordinate, y_coordinate], color='green', linestyle='--', zorder=2)
