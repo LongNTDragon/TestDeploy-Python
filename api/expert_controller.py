@@ -1,5 +1,5 @@
 from flask import request
-from .service import validateInfo, reportPdf, drawHexagon, drawScatterPlot
+from .service import validateInfo, reportPdf, drawHexagon, drawScatterPlot, drawHeartRatePlot
 
 def expert01():
     messageArr = []
@@ -72,3 +72,25 @@ def expert03():
     drawScatterPlot(data['month'] , data['relevant_mov'], 'graph_scatter_plot_task-relevant.png')
     drawScatterPlot(data['month'], data['unrelevant_mov'], 'graph_scatter_plot_unprompted.png')
     return reportPdf('expert_03.html', data)
+
+def expert04():
+    messageArr = []
+    validateInfo('x_axis', request.json, messageArr)
+    validateInfo('y_axis', request.json, messageArr)
+    validateInfo('z_axis', request.json, messageArr)
+
+    validateInfo('date', request.json, messageArr)
+    validateInfo('name', request.json, messageArr)
+    validateInfo('age', request.json, messageArr)
+    validateInfo('gender', request.json, messageArr)
+    
+    if(len(messageArr) > 0):
+        return {
+            'status': False,
+            'messages':messageArr
+        }
+    data = request.json
+    drawHeartRatePlot(data['x_axis'], 'X', '#0099ff', 'X_axis.png')
+    drawHeartRatePlot(data['y_axis'], 'Y', '#ffcc66', 'Y_axis.png')
+    drawHeartRatePlot(data['z_axis'], 'Z', '#b0d3ad', 'Z_axis.png')
+    return reportPdf('expert_04.html', data)

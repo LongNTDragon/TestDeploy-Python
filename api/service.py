@@ -3,6 +3,9 @@ import pdfkit
 import matplotlib.pyplot as plt # type: ignore
 from matplotlib.patches import Polygon, Circle # type: ignore
 from flask import render_template_string, send_file
+import pandas as pd # type: ignore
+from scipy.signal import butter, filtfilt # type: ignore
+
 
 def validateInfo(attribute, object, messageArr):
     if attribute not in object:
@@ -95,3 +98,38 @@ def drawScatterPlot(x, y, image_name):
 
     image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
     plt.savefig(image_path, bbox_inches='tight', transparent=True)
+
+def drawHeartRatePlot(axis_value, column, color, image_name):
+    df = pd.DataFrame(axis_value, columns=[column])
+    df = df.reset_index(drop=True)
+
+    percentile = {}
+    percentile[column] = pd.read_csv(f"api/percentile.csv")
+    percentile[column] = percentile[column].reset_index(drop=True)
+
+    width = 2015 / 100
+    height = 680 / 100
+    plt.figure(figsize=(width, height))
+
+    plt.plot(df, color=color, label=column)
+
+    fs = 10 
+    nyq = 0.5 * fs
+    cutoff = 2 
+    normal_cutoff = cutoff / nyq
+    order = 2
+    b, a = butter(order, normal_cutoff, btype='low', analog=False)
+
+    smooth_min = filtfilt(b, a, percentile[column]['Min'].iloc[:len(df)])
+    smooth_max = filtfilt(b, a, percentile[column]['Max'].iloc[:len(df)])
+
+    plt.fill_between(df.index, smooth_min, smooth_max, color=color, alpha=0.3, linewidth=0)
+
+    plt.ylabel(column + '-axis \n Movement Velocity')
+    plt.xlim(10, len(df)-10)
+    plt.ylim(-1.5, 1.5)
+    plt.xticks([])
+    plt.grid(True)
+    plt.legend()
+    image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
+    plt.savefig(image_path, bbox_inches='tight')
