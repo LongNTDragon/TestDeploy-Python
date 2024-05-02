@@ -2,4 +2,3 @@ Flask
 gunicorn
 pdfkit
 matplotlib
-mpld3
