@@ -84,7 +84,7 @@ def drawScatterPlot(x, y, image_name):
     x_coordinate = x
     y_coordinate = y
 
-    plt.figure(figsize=(10, 9))
+    plt.figure(figsize=(9, 9))
 
     plt.scatter(x_coordinate, y_coordinate, color='green', zorder=2)
     plt.plot([x_coordinate, x_coordinate], [-x_coordinate, y_coordinate], color='green', linestyle='--', zorder=2)
