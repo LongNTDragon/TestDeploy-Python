@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'parent_01.css' | css }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'print.css' | css }}">
+</head>
+
+<body>
+    <div class="report">
+        <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
+        <span class="logo_transparent_back_2">
+            {% set image_name = "logo_transparent_back_2.png" %}
+            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+        </span>
+
+        <span class="logohippbrand">
+            {% set image_name = "Hippebrand.png" %}
+            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+        </span>
+
+        <div class="khungtieude">
+            <span class="chuatieude2">
+                검사 결과<br>
+                분석 보고서
+            </span>
+        </div>
+
+        <span class="info_bold">
+            기관명<br>
+            검사일<br>
+            성명<br>
+            나이<br>
+            성별
+        </span>
+        <span class="info_normal">
+            {{ institution }}<br>
+            {{ date }}<br>
+            {{ name }}<br>
+            {{ age }}<br>
+            {{ gender }}
+        </span>
+
+        <span class="anhgiua">
+            {% set image_name = "자산_18@4x.png" %}
+            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+        </span>
+
+        <div class="khunggiua">
+
+            <span class="contents_title">
+                HippBrainCheck™ 보고서 구성
+            </span>
+
+            <span class="contents_left_bold">
+                <br> 1. 주의집중력과 행동 조절 능력, 왜 중요할까요<br>
+                2. 주의력결핍 과잉행동장애, 어떤 모습으로 나타나나요?<br>
+                3. HippBrainCheck™에 대하여<br>
+            </span>
+
+            <span class="contents_right_bold">
+                4. HippBrainCheck™에서는 무엇을 수행하나요?<br>
+                5. 평가 총평 <br>
+                6. 영역별 결과 해석 및 제언 <br>
+            </span>
+
+        </div>
+        <span class="chuduoicung">
+            ※HippBrainCheck™은 의학적인 치료나 진단을 위한 도구가 아님※
+        </span>
+    </div>
+</body>
+<script src="../static/js/print.js"></script>
+
+</html>

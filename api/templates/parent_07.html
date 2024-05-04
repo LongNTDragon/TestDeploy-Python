@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'pretendard-font.css' | css }}" />
+    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04.css' | css }}" />
+    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04_session1.css' | css }}" />
+    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04_session2.css' | css }}" />
+    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04_session3.css' | css }}" />
+    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04_session4.css' | css }}" />
+    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'print.css' | css }}" />
+</head>
+
+<body>
+    <div class="report">
+        <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
+        <div class="header">
+            <div class="header_left">
+                <span class="header_left_number">02</span>
+                <span class="header_left_text">영역별 결과 해석</span>
+            </div>
+
+            <div class="header_right">
+                <div class="header_right_key">
+                    <p>검사일</p>
+                    <p>성명</p>
+                    <p>나이/성별</p>
+                </div>
+
+                <div class="header_right_value">
+                    <p>{{ test_date }}</p>
+                    <p>{{ name }} </p>
+                    <p>{{ age }}세/{{ sex }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="session1">
+            <span class="title title1"> 4. 행동조절력 </span>
+
+            <div class="graph"></div>
+
+            <div class="table">
+                <div class="line1">
+                    <div class="column_title column1">백분위</div>
+                    <div class="column_title column2">미흡</div>
+                    <div class="column_title column3">경계</div>
+                    <div class="column_title column4">보통</div>
+                    <div class="column_title column5">우수</div>
+                </div>
+                <div class="line2">
+                    <div class="column_title column1"></div>
+
+                    {% set classname = "column2" if result.0 == 1 else ""%}
+                    <div class="column_title {{ classname }}"> &#10003;</div>
+
+                    {% set classname = "column3" if result.1 == 1 else ""%}
+                    <div class="column_title {{ classname }}"> &#10003;</div>
+
+                    {% set classname = "column4" if result.2 == 1 else ""%}
+                    <div class="column_title {{ classname }}"> &#10003;</div>
+
+                    {% set classname = "column5" if result.3 == 1 else ""%}
+                    <div class="column_title {{ classname }}"> &#10003;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="session2">
+            <div class="title title2">
+                <span> 미션수행 분석 </span>
+                <div class="divider2"></div>
+            </div>
+
+            <div class="desc2">
+                <p>
+                    <b>{{ mission_performance_analysis.analysis.title }}</b> <br /> {{
+                    mission_performance_analysis.analysis.desc }}
+                </p>
+
+                <b>{{ mission_performance_analysis.result.title }}</b>
+                <ul>
+                    <li>{{ mission_performance_analysis.result.desc.0 }}</li>
+                    <li>{{ mission_performance_analysis.result.desc.1 }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="session3">
+            <div class="title title3">
+                <span> 일상적/발달적 특징 </span>
+                <div class="divider3"></div>
+            </div>
+
+            <div class="desc3">
+                <ul>
+                    <li>{{ routine_developmental_characteristics.0 }}</li>
+                    <li>{{ routine_developmental_characteristics.1 }}</li>
+                    <li>{{ routine_developmental_characteristics.2 }}</li>
+                    <li>{{ routine_developmental_characteristics.3 }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="session4">
+            <div class="title title4">
+                <span> 추천 활동 </span>
+                <div class="divider4"></div>
+            </div>
+
+            <div class="desc4">
+                <p>
+                    <b>부모님과 같이 해봐요</b> <br /> {{ recommended_activities.parent }}
+                </p>
+
+                <p>
+                    <b>혼자서 해볼게요</b> <br /> {{ recommended_activities.alone }}
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../static/js/print.js"></script>
+
+</html>
