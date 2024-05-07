@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'pretendard-font.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_03.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'print.css' | css }}">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+</head>
+
+<body>
+  <div class="report">
+    <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
+    <div class="header">
+      <div class="header_left">
+        <span class="header_left_number">02</span>
+        <span class="header_left_text">영역별 결과 해석</span>
+      </div>
+      <div class="header_right">
+        <div class="header_right_key">
+          <p>검사일</p>
+          <p>성명</p>
+          <p>나이/성별</p>
+        </div>
+        <div class="header_right_value">
+          <p>{{ test_date }}</p>
+          <p>{{ name }}</p>
+          <p>{{ age }}세/{{ sex }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="session1">
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var x1 = parseInt("{{ section1.factor1 }}", 10);
+          var x2 = parseInt("{{ section1.factor2 }}", 10);
+          var x3 = parseInt("{{ section1.factor3 }}", 10);
+          var x4 = parseInt("{{ section1.factor4 }}", 10);
+          var x5 = parseInt("{{ section1.factor5 }}", 10);
+          var x6 = parseInt("{{ section1.factor6 }}", 10);
+
+          Highcharts.chart("container", {
+            // id가 container인 부분에 놓는다
+            chart: {
+              polar: true,
+              type: "line",
+              backgroundColor: "transparent", // 차트 배경을 투명하게 설정
+              plotBackgroundColor: "transparent", // 플롯 영역 배경을 투명하게 설정
+              plotBorderWidth: 0, // 플롯 영역 테두리 제거
+            },
+            pane: {
+              size: "110%",
+            },
+            title: false, // 제목 제거
+            subtitle: false, // 부제목 제거
+            xAxis: {
+              categories: [
+                "Sales",
+                "Marketing",
+                "Development",
+                "Customer Support",
+                "Information Technology",
+                "Administration",
+              ],
+              tickmarkPlacement: "on",
+              lineWidth: 0,
+              gridLineWidth: 0,
+              labels: {
+                enabled: false,
+              },
+            },
+            yAxis: {
+              gridLineInterpolation: "polygon",
+              gridLineWidth: 0, // y grid 제거
+              lineWidth: 0,
+              min: 0,
+              max: 100,
+
+              labels: {
+                enabled: false, // y label 비활성화
+              },
+            },
+            tooltip: {
+              enabled: false, // 점에 마우스 놓았을시 나오는 툴팁 비활성화
+            },
+            legend: false, // 범례 비활성화
+            series: [
+              {
+                //   data: [100, 100, 100, 100, 100, 100],
+                //   data: [80, 80, 80, 80, 80, 80],
+                //   data: [45, 45, 45, 45, 45, 45],
+                //   data: [35, 35, 35, 35, 35, 35],
+                data: [x1, x2, x3, x4, x5, x6], // 실제 데이터 입력값
+                pointPlacement: "on", // 위치 맞춤 (12시부터 시계방향으로 데이터 입력)
+                color: "#656465", // 선색깔
+                lineWidth: 3, // 선두께
+                marker: {
+                  fillColor: "white", // 점의 내부 색상
+                  lineColor: "#656465", // 점의 테두리 색상
+                  lineWidth: 3, // 점의 테두리 너비
+                },
+              },
+            ],
+            credits: {
+              enabled: false,
+            },
+          });
+        });
+      </script>
+      <div class="table1_box1">
+        <span class="table1_1">주의집중력</span>
+        <span class="table1_2">{{ section1.factor1 }}%</span>
+        <span class="table1_3">{{ section1.factor1_circle.0 }}</span>
+        <span class="table1_4">{{ section1.factor1_circle.1 }}</span>
+        <span class="table1_5">{{ section1.factor1_circle.2 }}</span>
+        <span class="table1_6">{{ section1.factor1_circle.3 }}</span>
+      </div>
+
+      <div class="table1_box2">
+        <span class="table1_1">작업기억력</span>
+        <span class="table1_2">{{ section1.factor2 }}%</span>
+        <span class="table1_3">{{ section1.factor2_circle.0 }}</span>
+        <span class="table1_4">{{ section1.factor2_circle.1 }}</span>
+        <span class="table1_5">{{ section1.factor2_circle.2 }}</span>
+        <span class="table1_6">{{ section1.factor2_circle.3 }}</span>
+      </div>
+
+      <div class="table1_box3">
+        <span class="table1_1">집행기능</span>
+        <span class="table1_2">{{ section1.factor3 }}%</span>
+        <span class="table1_3">{{ section1.factor3_circle.0 }}</span>
+        <span class="table1_4">{{ section1.factor3_circle.1 }}</span>
+        <span class="table1_5">{{ section1.factor3_circle.2 }}</span>
+        <span class="table1_6">{{ section1.factor3_circle.3 }}</span>
+      </div>
+
+      <div class="table1_box4">
+        <span class="table1_1">행동조절력</span>
+        <span class="table1_2">{{ section1.factor4 }}%</span>
+        <span class="table1_3">{{ section1.factor4_circle.0 }}</span>
+        <span class="table1_4">{{ section1.factor4_circle.1 }}</span>
+        <span class="table1_5">{{ section1.factor4_circle.2 }}</span>
+        <span class="table1_6">{{ section1.factor4_circle.3 }}</span>
+      </div>
+
+      <div class="table1_box5">
+        <span class="table1_1">사회성</span>
+        <span class="table1_2">{{ section1.factor5 }}%</span>
+        <span class="table1_3">{{ section1.factor5_circle.0 }}</span>
+        <span class="table1_4">{{ section1.factor5_circle.1 }}</span>
+        <span class="table1_5">{{ section1.factor5_circle.2 }}</span>
+        <span class="table1_6">{{ section1.factor5_circle.3 }}</span>
+      </div>
+
+      <div class="table1_box6">
+        <span class="table1_1">충동자제력</span>
+        <span class="table1_2">{{ section1.factor6 }}%</span>
+        <span class="table1_3">{{ section1.factor6_circle.0 }}</span>
+        <span class="table1_4">{{ section1.factor6_circle.1 }}</span>
+        <span class="table1_5">{{ section1.factor6_circle.2 }}</span>
+        <span class="table1_6">{{ section1.factor6_circle.3 }}</span>
+      </div>
+
+      <div>
+        <div class="hexagon_box1">
+          <span class="hexagon_text">주의집중력</span>
+          <span class="hexagon_value">{{ section1.factor1 }}%</span>
+        </div>
+
+        <div class="hexagon_box2">
+          <span class="hexagon_text">작업기억력</span>
+          <span class="hexagon_value">{{ section1.factor2 }}%</span>
+        </div>
+
+        <div class="hexagon_box3">
+          <span class="hexagon_text">집행기능</span>
+          <span class="hexagon_value">{{ section1.factor3 }}%</span>
+        </div>
+
+        <div class="hexagon_box4">
+          <span class="hexagon_text">행동조절력</span>
+          <span class="hexagon_value">{{ section1.factor4 }}%</span>
+        </div>
+
+        <div class="hexagon_box5">
+          <span class="hexagon_text">사회성</span>
+          <span class="hexagon_value">{{ section1.factor5 }}%</span>
+        </div>
+
+        <div class="hexagon_box6">
+          <span class="hexagon_text">충동자제력</span>
+          <span class="hexagon_value">{{ section1.factor6 }}%</span>
+        </div>
+
+        <div id="container" class="hexagon_graph"></div>
+
+        {% set image_name = "hexagon1_1.png" %}
+        <img class="hexagon1" src="{{ image_name | img }}" />
+
+        {% set image_name = "hexagon1_2.png" %}
+        <img class="hexagon2" src="{{ image_name | img }}" />
+
+        {% set image_name = "hexagon1_3.png" %}
+        <img class="hexagon3" src="{{ image_name | img }}" />
+
+        {% set image_name = "hexagon1_4.png" %}
+        <img class="hexagon4" src="{{ image_name | img }}" />
+      </div>
+    </div>
+
+    <div class="session2">
+      <div class="title title2">
+        <span> 미션수행 분석 </span>
+        <div class="divider2"></div>
+      </div>
+
+      <div class="desc_area">
+        <div class="circle">
+          <span> 보통 </span>
+        </div>
+        <div class="desc_text_left">
+          <span class="desc_title">{{Performance_evaluation.commonly.title}}</span>
+          <span class="desc_desc">{{Performance_evaluation.commonly.desc}}</span>
+        </div>
+      </div>
+
+      <div class="desc_area">
+        <div class="circle">
+          <span> 보통 </span>
+        </div>
+        <div class="desc_text_left">
+          <span class="desc_title">{{Performance_evaluation.commonly1.title}}</span>
+          <span class="desc_desc">{{Performance_evaluation.commonly1.desc}}</span>
+        </div>
+      </div>
+
+      <div class="desc_area">
+        <div class="circle">
+          <span> 경계 </span>
+        </div>
+        <div class="desc_text_left">
+          <span class="desc_title">{{Performance_evaluation.boundary1.title}}</span>
+          <span class="desc_desc">{{Performance_evaluation.boundary1.desc}}</span>
+        </div>
+      </div>
+
+      <div class="desc_area">
+        <div class="circle">
+          <span> 미흡 </span>
+        </div>
+        <div class="desc_text_left">
+          <span class="desc_title">{{Performance_evaluation.inadequate.title}}</span>
+          <span class="desc_desc">{{Performance_evaluation.inadequate.desc}}</span>
+        </div>
+      </div>
+
+      <div class="desc_area">
+        <div class="circle">
+          <span> 경계 </span>
+        </div>
+        <div class="desc_text_left">
+          <span class="desc_title">{{Performance_evaluation.boundary2.title}}</span>
+          <span class="desc_desc">{{Performance_evaluation.boundary2.desc}}</span>
+        </div>
+      </div>
+
+      <div class="desc_area">
+        <div class="circle">
+          <span> 보통 </span>
+        </div>
+        <div class="desc_text_left">
+          <span class="desc_title">{{Performance_evaluation.commonly2.title}}</span>
+          <span class="desc_desc">{{Performance_evaluation.commonly2.desc}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../static/js/print.js"></script>
+
+</html>
