@@ -133,3 +133,20 @@ def drawHeartRatePlot(axis_value, column, color, image_name):
     plt.legend()
     image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
     plt.savefig(image_path, bbox_inches='tight')
+
+def drawScatterPlotNoAxis(x, y, image_name):
+    plt.figure(figsize=(12.7, 9.5))
+    plt.scatter(x, y, color='green')
+
+    plt.axhline(y=y, linestyle='--', color='green')
+    plt.axvline(x=x, linestyle='--', color='green')
+
+    plt.xlim(0, 100)
+    plt.ylim(0, 100)
+    
+    plt.xlabel('Prompted Movement')
+    plt.ylabel('Unprompted Movement')
+    plt.tick_params(bottom=False, left=False, labelbottom=False, labelleft=False)
+
+    image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
+    plt.savefig(image_path, bbox_inches='tight', transparent=True)

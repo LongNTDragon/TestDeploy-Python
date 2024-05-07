@@ -9,6 +9,19 @@
   <link rel="stylesheet" type="text/css" href="{{ 'expert_02.css' | css }}" />
   <link rel="stylesheet" type="text/css" href="{{ 'expert_02_section1.css' | css }}" />
   <link rel="stylesheet" type="text/css" href="{{ 'expert_02_section2.css' | css }}" />
+  <style>
+    .vertical_bar {
+      position: absolute;
+      left: 300px;
+      top: -1px;
+      width: 24px;
+      height: 24px;
+      margin: 0 32px 19px 26px;
+      border: solid 7px #fff;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      border-radius: 30px;
+    }
+  </style>
 </head>
 
 <body>
@@ -205,20 +218,63 @@
           {% set image_name = "bar_gradient.png" %}
           <img src="{{ image_name | img }}" />
         </span>
+        {% set point_prom = 300 + 3.9 * prompted_percentile %}
+        <div style="left: {{point_prom}}px;" class="vertical_bar"></div>
+
         <span style="position: absolute; top: 72px; left: 330px;">
           {% set image_name = "bar_gradient.png" %}
           <img src="{{ image_name | img }}" />
         </span>
+        {% set point_prom = 300 + 3.9 * unprompted_percentile %}
+        <div style="top: 64.989px; left: {{point_prom}}px;" class="vertical_bar"></div>
+
         <span style="position: absolute; top: 140px; left: 330px;">
           {% set image_name = "bar_gradient.png" %}
           <img src="{{ image_name | img }}" />
         </span>
+        {% set point_prom = 300 + 3.9 * comprehensive_percentile %}
+        <div style="top: 132px; left: {{point_prom}}px;" class="vertical_bar"></div>
       </div>
     </div>
 
     <div class="graph2">
-      {% set image_name = "graph_section2.png" %}
-      <img src="{{ image_name | img }}" />
+      <svg style="position: absolute; left: 180px; top:100px; z-index: 1;" xmlns="http://www.w3.org/2000/svg"
+        width="999.000" height="701.751" viewBox="0 0">
+        <g id="그룹_535" data-name="그룹 535" transform="translate(-254.882 -1632.536)">
+          <text id="과잉_행동_우세형" data-name="과잉 행동
+      우세형" transform="translate(417.973 1698.11)" fill="#2a2a2a" font-size="37"
+            font-family="Pretendard-SemiBold, Pretendard" font-weight="600" letter-spacing="-0.015em">
+            <tspan x="-67.235" y="0">과잉 행동</tspan>
+            <tspan x="-47.411" y="48">우세형</tspan>
+          </text>
+          <text id="행동_절제형" data-name="행동 절제형" transform="translate(417.958 2258.637)" fill="#2a2a2a" font-size="37"
+            font-family="Pretendard-SemiBold, Pretendard" font-weight="600" letter-spacing="-0.015em">
+            <tspan x="-82.946" y="0">행동 절제형</tspan>
+          </text>
+          <text id="행동_우세형" data-name="행동 우세형" transform="translate(910.057 1698.11)" fill="#2a2a2a" font-size="37"
+            font-family="Pretendard-SemiBold, Pretendard" font-weight="600" letter-spacing="-0.015em">
+            <tspan x="-82.946" y="0">행동 우세형</tspan>
+          </text>
+          <rect id="사각형_446" data-name="사각형 446" width="329.037" height="543.056" rx="22"
+            transform="translate(254.882 1632.536)" fill="#d16767" opacity="0.25" />
+          <rect id="사각형_449" data-name="사각형 449" width="329.037" height="126.665" rx="22"
+            transform="translate(254.882 2207.622)" fill="#58a0ff" opacity="0.25" />
+          <rect id="사각형_447" data-name="사각형 447" width="596.925" height="543.056" rx="22"
+            transform="translate(613.037 1632.536)" fill="#ff9327" opacity="0.25" />
+          <rect id="사각형_448" data-name="사각형 448" width="596.925" height="126.665" rx="22"
+            transform="translate(613.037 2207.622)" fill="#45b480" opacity="0.25" />
+          <text id="절제_행동_우세형" data-name="절제 행동 우세형" transform="translate(908.659 2258.637)" fill="#2a2a2a"
+            font-size="37" font-family="Pretendard-SemiBold, Pretendard" font-weight="600" letter-spacing="-0.015em">
+            <tspan x="-118.482" y="0">절제 행동 우세형</tspan>
+          </text>
+        </g>
+      </svg>
+
+      {% set image_name = "graph_111.png" %}
+      <img style="width: 77%; position: absolute; left: 170px; top: 89px; z-index: 0;" src="{{ image_name | img }}" />
+
+      {% set image_name = "graph_scatter_plot_prompt_unprompted.png" %}
+      <img style="position: absolute; z-index: 2; top: 75px; left: 135px;" src="{{ image_name | img }}" />
     </div>
 
     <div>

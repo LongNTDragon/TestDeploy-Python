@@ -1,5 +1,5 @@
 from flask import request
-from .service import validateInfo, reportPdf, drawHexagon, drawScatterPlot, drawHeartRatePlot
+from .service import validateInfo, reportPdf, drawHexagon, drawScatterPlot, drawHeartRatePlot, drawScatterPlotNoAxis
 
 def expert01():
     messageArr = []
@@ -46,6 +46,7 @@ def expert02():
     
     data = request.json
     drawHexagon(data)
+    drawScatterPlotNoAxis(data['prompted_percentile'], data['unprompted_percentile'], 'graph_scatter_plot_prompt_unprompted.png')
     return reportPdf('expert_02.html', data)
 
 def expert03():
