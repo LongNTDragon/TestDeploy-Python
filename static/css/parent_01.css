@@ -138,14 +138,12 @@
 }
 
 .info_normal {
-    width: 236px;
     position: absolute;
     height: 368px;
     top: 1231px;
     left: 387px;
     right: 139px;
     bottom: 813px;
-    width: 236px;
     font-family: Pretendard;
     font-size: 40px;
     font-weight: normal;
@@ -158,7 +156,6 @@
 }
 
 .info_bold {
-    width: 103px;
     position: absolute;
     height: 368px;
     top: 1231px;
@@ -207,7 +204,5 @@
     right: 368px;
     left: 204px;
     bottom: 956px;
-    width: 1119px;
-    height: 327px;
     object-fit: contain;
 }

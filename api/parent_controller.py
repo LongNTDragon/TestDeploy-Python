@@ -7,6 +7,7 @@ def parent01():
     validateInfo('date', request.json, messageArr)
     validateInfo('name', request.json, messageArr)
     validateInfo('age', request.json, messageArr)
+    validateInfo('gender', request.json, messageArr)
     
     if(len(messageArr) > 0):
         return {
@@ -44,6 +45,7 @@ def parent03():
     validateInfo('date', request.json, messageArr)
     validateInfo('name', request.json, messageArr)
     validateInfo('age', request.json, messageArr)
+    validateInfo('gender', request.json, messageArr)
     
     if(len(messageArr) > 0):
         return {
@@ -52,7 +54,7 @@ def parent03():
         }
     
     data = request.json
-    drawScatterPlot(data)
+    drawHexagon(data, 'hexagon_parent.png')
     return reportPdf('parent_03.html', data)
 
 def parent04():

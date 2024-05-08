@@ -34,12 +34,11 @@ body {
 .header {
     position: absolute;
     top: 0;
-    display: flex;
 }
 
 .header_left {
-    position: relative;
-    width: 1851.6px;
+    position: absolute;
+    width: 1800px;
     height: 275px;
     background-color: #0c4999;
     border-top-right-radius: 300px;
@@ -74,10 +73,13 @@ body {
 }
 
 .header_right {
-    display: flex;
+    position: absolute;
+    left: 1850px;
 }
 
 .header_right_key {
+    position: absolute;
+    width: 150px;
     padding-top: 30px;
     margin-left: 100px;
     font-family: Pretendard;
@@ -85,12 +87,14 @@ body {
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    letter-spacing: -0.51px;
     text-align: left;
     color: #969696;
 }
 
 .header_right_value {
+    position: absolute;
+    width: 200px;
+    left: 200px;
     padding-top: 30px;
     margin-left: 80px;
     font-family: Pretendard;
@@ -98,7 +102,6 @@ body {
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    letter-spacing: -0.51px;
     text-align: left;
     color: #2a2a2a;
 }
@@ -116,6 +119,122 @@ body {
     letter-spacing: -0.75px;
     text-align: left;
     color: #0c4999;
+}
+
+.table1_bar1 {
+    position: absolute;
+    top: 380px;
+    left: 130px;
+    width: 510px;
+    height: 133px;
+    color: #fff;
+    background-color: #0c4999;
+}
+
+.table1_bar2 {
+    position: absolute;
+    top: 380px;
+    left: 638px;
+    width: 1712px;
+    height: 133px;
+    color: #fff;
+    background-color: #0c4999;
+}
+
+.table1_bar1_1 {
+    position: absolute;
+    top: 35px;
+    left: 91px;
+    height: 48px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+    text-align: left;
+}
+
+.table1_bar1_2 {
+    position: absolute;
+    top: 35px;
+    left: 357px;
+    height: 48px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+    text-align: left;
+}
+
+.table1_bar2_1 {
+    position: absolute;
+    top: 37px;
+    left: 139px;
+    height: 45px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 38px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.58;
+    letter-spacing: -0.57px;
+    text-align: center;
+}
+
+.table1_bar2_2 {
+    position: absolute;
+    top: 37px;
+    left: 319px;
+    height: 45px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 38px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.58;
+    letter-spacing: -0.57px;
+    text-align: center;
+}
+
+.table1_bar2_3 {
+    position: absolute;
+    top: 37px;
+    left: 499px;
+    height: 45px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 38px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.58;
+    letter-spacing: -0.57px;
+    text-align: center;
+}
+
+.table1_bar2_4 {
+    position: absolute;
+    top: 37px;
+    left: 679px;
+    height: 45px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 38px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.58;
+    letter-spacing: -0.57px;
+    text-align: center;
 }
 
 .table1_box1 {
@@ -223,7 +342,7 @@ body {
     line-height: 1.67;
     letter-spacing: -0.54px;
     text-align: left;
-    color: #303030;
+    color: #83bb6a;
 }
 
 .table1_4 {
@@ -240,7 +359,7 @@ body {
     line-height: 1.67;
     letter-spacing: -0.54px;
     text-align: left;
-    color: #303030;
+    color: #ffbc20;
 }
 
 .table1_5 {
@@ -257,7 +376,7 @@ body {
     line-height: 1.67;
     letter-spacing: -0.54px;
     text-align: left;
-    color: #303030;
+    color: #ef7320;
 }
 
 .table1_6 {
@@ -274,7 +393,7 @@ body {
     line-height: 1.67;
     letter-spacing: -0.54px;
     text-align: left;
-    color: #303030;
+    color: #e14747;
 }
 
 .hexagon_box1 {
@@ -423,19 +542,18 @@ body {
 }
 
 .desc_area {
+    position: relative;
     width: 2180px;
     height: 200px;
     margin: 33px 0 30px 0;
     padding: 42px 73px 42px 50px;
     border-radius: 20px;
     background-color: #f8f8f8;
-    display: flex;
 }
 
 .desc_area .circle {
     width: 90px;
-    padding: 55px;
-    background-color: #ffbc20;
+    padding: 70px 55px;
     border-radius: 100%;
     text-align: center;
     align-content: center;
@@ -449,23 +567,39 @@ body {
 }
 
 .desc_text_left {
-    margin-left: 45px;
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 320px;
+    margin-right: 40px;
 }
 
 .desc_text_left .desc_title {
     font-family: Pretendard;
     font-size: 44px;
     font-weight: 600;
+    line-height: 70px;
     color: #2a2a2a;
 }
 
 .desc_text_left .desc_desc {
     width: 1900px;
-    margin-top: 15px;
     font-family: Pretendard;
     font-size: 30px;
     color: #303030;
+}
+
+.excellent {
+    background-color: #83bb6a;
+}
+
+.good {
+    background-color: #ffbc20;
+}
+
+.average {
+    background-color: #ef7320;
+}
+
+.poor {
+    background-color: #e14747;
 }

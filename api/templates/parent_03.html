@@ -2,17 +2,14 @@
 <html lang="en">
 
 <head>
+  <meta charset="utf-8">
   <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'pretendard-font.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'pretendard-font-wkhtmltopdf.css' | css }}">
   <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_03.css' | css }}" />
-  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'print.css' | css }}">
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/highcharts-more.js"></script>
 </head>
 
 <body>
   <div class="report">
-    <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
     <div class="header">
       <div class="header_left">
         <span class="header_left_number">02</span>
@@ -25,189 +22,152 @@
           <p>나이/성별</p>
         </div>
         <div class="header_right_value">
-          <p>{{ test_date }}</p>
+          <p>{{ date }}</p>
           <p>{{ name }}</p>
-          <p>{{ age }}세/{{ sex }}</p>
+          <p>{{ age }}세/{{ gender }}</p>
         </div>
       </div>
     </div>
 
     <div class="session1">
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          var x1 = parseInt("{{ section1.factor1 }}", 10);
-          var x2 = parseInt("{{ section1.factor2 }}", 10);
-          var x3 = parseInt("{{ section1.factor3 }}", 10);
-          var x4 = parseInt("{{ section1.factor4 }}", 10);
-          var x5 = parseInt("{{ section1.factor5 }}", 10);
-          var x6 = parseInt("{{ section1.factor6 }}", 10);
+      <div class="table1_bar2">
+        <span style="color: #83bb6a;" class="table1_bar2_1">우수</span>
+        <span style="color: #ffbc20;" class="table1_bar2_2">보통</span>
+        <span style="color: #ef7320;" class="table1_bar2_3">경계</span>
+        <span style="color: #e14747;" class="table1_bar2_4">미흡</span>
+      </div>
 
-          Highcharts.chart("container", {
-            // id가 container인 부분에 놓는다
-            chart: {
-              polar: true,
-              type: "line",
-              backgroundColor: "transparent", // 차트 배경을 투명하게 설정
-              plotBackgroundColor: "transparent", // 플롯 영역 배경을 투명하게 설정
-              plotBorderWidth: 0, // 플롯 영역 테두리 제거
-            },
-            pane: {
-              size: "110%",
-            },
-            title: false, // 제목 제거
-            subtitle: false, // 부제목 제거
-            xAxis: {
-              categories: [
-                "Sales",
-                "Marketing",
-                "Development",
-                "Customer Support",
-                "Information Technology",
-                "Administration",
-              ],
-              tickmarkPlacement: "on",
-              lineWidth: 0,
-              gridLineWidth: 0,
-              labels: {
-                enabled: false,
-              },
-            },
-            yAxis: {
-              gridLineInterpolation: "polygon",
-              gridLineWidth: 0, // y grid 제거
-              lineWidth: 0,
-              min: 0,
-              max: 100,
+      <div class="table1_bar1">
+        <span class="table1_bar1_1">수행능력</span>
+        <span class="table1_bar1_2">백분위</span>
+      </div>
 
-              labels: {
-                enabled: false, // y label 비활성화
-              },
-            },
-            tooltip: {
-              enabled: false, // 점에 마우스 놓았을시 나오는 툴팁 비활성화
-            },
-            legend: false, // 범례 비활성화
-            series: [
-              {
-                //   data: [100, 100, 100, 100, 100, 100],
-                //   data: [80, 80, 80, 80, 80, 80],
-                //   data: [45, 45, 45, 45, 45, 45],
-                //   data: [35, 35, 35, 35, 35, 35],
-                data: [x1, x2, x3, x4, x5, x6], // 실제 데이터 입력값
-                pointPlacement: "on", // 위치 맞춤 (12시부터 시계방향으로 데이터 입력)
-                color: "#656465", // 선색깔
-                lineWidth: 3, // 선두께
-                marker: {
-                  fillColor: "white", // 점의 내부 색상
-                  lineColor: "#656465", // 점의 테두리 색상
-                  lineWidth: 3, // 점의 테두리 너비
-                },
-              },
-            ],
-            credits: {
-              enabled: false,
-            },
-          });
-        });
-      </script>
       <div class="table1_box1">
         <span class="table1_1">주의집중력</span>
-        <span class="table1_2">{{ section1.factor1 }}%</span>
-        <span class="table1_3">{{ section1.factor1_circle.0 }}</span>
-        <span class="table1_4">{{ section1.factor1_circle.1 }}</span>
-        <span class="table1_5">{{ section1.factor1_circle.2 }}</span>
-        <span class="table1_6">{{ section1.factor1_circle.3 }}</span>
+        <span class="table1_2">{{ factor1 }}%</span>
+        {% set r1 = "●" if factor1 > 75 else "" %}
+        {% set r2 = "●" if (factor1 > 50 and not factor1 > 75) else "" %}
+        {% set r3="●" if (factor1 > 25 and not factor1 > 50)else "" %}
+        {% set r4="●" if not factor1 > 25 else "" %}
+        <span class="table1_3">{{ r1 }}</span>
+        <span class="table1_4">{{ r2 }}</span>
+        <span class="table1_5">{{ r3 }}</span>
+        <span class="table1_6">{{ r4 }}</span>
       </div>
 
       <div class="table1_box2">
         <span class="table1_1">작업기억력</span>
-        <span class="table1_2">{{ section1.factor2 }}%</span>
-        <span class="table1_3">{{ section1.factor2_circle.0 }}</span>
-        <span class="table1_4">{{ section1.factor2_circle.1 }}</span>
-        <span class="table1_5">{{ section1.factor2_circle.2 }}</span>
-        <span class="table1_6">{{ section1.factor2_circle.3 }}</span>
+        <span class="table1_2">{{ factor2 }}%</span>
+        {% set r1 = "●" if factor2 > 75 else "" %}
+        {% set r2 = "●" if (factor2 > 50 and not factor2 > 75) else "" %}
+        {% set r3="●" if (factor2 > 25 and not factor2 > 50)else "" %}
+        {% set r4="●" if not factor2 > 25 else "" %}
+        <span class="table1_3">{{ r1 }}</span>
+        <span class="table1_4">{{ r2 }}</span>
+        <span class="table1_5">{{ r3 }}</span>
+        <span class="table1_6">{{ r4 }}</span>
       </div>
 
       <div class="table1_box3">
         <span class="table1_1">집행기능</span>
-        <span class="table1_2">{{ section1.factor3 }}%</span>
-        <span class="table1_3">{{ section1.factor3_circle.0 }}</span>
-        <span class="table1_4">{{ section1.factor3_circle.1 }}</span>
-        <span class="table1_5">{{ section1.factor3_circle.2 }}</span>
-        <span class="table1_6">{{ section1.factor3_circle.3 }}</span>
+        <span class="table1_2">{{ factor3 }}%</span>
+        {% set r1 = "●" if factor3 > 75 else "" %}
+        {% set r2 = "●" if (factor3 > 50 and not factor3 > 75) else "" %}
+        {% set r3="●" if (factor3 > 25 and not factor3 > 50)else "" %}
+        {% set r4="●" if not factor3 > 25 else "" %}
+        <span class="table1_3">{{ r1 }}</span>
+        <span class="table1_4">{{ r2 }}</span>
+        <span class="table1_5">{{ r3 }}</span>
+        <span class="table1_6">{{ r4 }}</span>
       </div>
 
       <div class="table1_box4">
         <span class="table1_1">행동조절력</span>
-        <span class="table1_2">{{ section1.factor4 }}%</span>
-        <span class="table1_3">{{ section1.factor4_circle.0 }}</span>
-        <span class="table1_4">{{ section1.factor4_circle.1 }}</span>
-        <span class="table1_5">{{ section1.factor4_circle.2 }}</span>
-        <span class="table1_6">{{ section1.factor4_circle.3 }}</span>
+        <span class="table1_2">{{ factor4 }}%</span>
+        {% set r1 = "●" if factor4 > 75 else "" %}
+        {% set r2 = "●" if (factor4 > 50 and not factor4 > 75) else "" %}
+        {% set r3="●" if (factor4 > 25 and not factor4 > 50)else "" %}
+        {% set r4="●" if not factor4 > 25 else "" %}
+        <span class="table1_3">{{ r1 }}</span>
+        <span class="table1_4">{{ r2 }}</span>
+        <span class="table1_5">{{ r3 }}</span>
+        <span class="table1_6">{{ r4 }}</span>
       </div>
 
       <div class="table1_box5">
         <span class="table1_1">사회성</span>
-        <span class="table1_2">{{ section1.factor5 }}%</span>
-        <span class="table1_3">{{ section1.factor5_circle.0 }}</span>
-        <span class="table1_4">{{ section1.factor5_circle.1 }}</span>
-        <span class="table1_5">{{ section1.factor5_circle.2 }}</span>
-        <span class="table1_6">{{ section1.factor5_circle.3 }}</span>
+        <span class="table1_2">{{ factor5 }}%</span>
+        {% set r1 = "●" if factor5 > 75 else "" %}
+        {% set r2 = "●" if (factor5 > 50 and not factor5 > 75) else "" %}
+        {% set r3="●" if (factor5 > 25 and not factor5 > 50)else "" %}
+        {% set r4="●" if not factor5 > 25 else "" %}
+        <span class="table1_3">{{ r1 }}</span>
+        <span class="table1_4">{{ r2 }}</span>
+        <span class="table1_5">{{ r3 }}</span>
+        <span class="table1_6">{{ r4 }}</span>
       </div>
 
       <div class="table1_box6">
         <span class="table1_1">충동자제력</span>
-        <span class="table1_2">{{ section1.factor6 }}%</span>
-        <span class="table1_3">{{ section1.factor6_circle.0 }}</span>
-        <span class="table1_4">{{ section1.factor6_circle.1 }}</span>
-        <span class="table1_5">{{ section1.factor6_circle.2 }}</span>
-        <span class="table1_6">{{ section1.factor6_circle.3 }}</span>
+        <span class="table1_2">{{ factor6 }}%</span>
+        {% set r1 = "●" if factor6 > 75 else "" %}
+        {% set r2 = "●" if (factor6 > 50 and not factor6 > 75) else "" %}
+        {% set r3="●" if (factor6 > 25 and not factor6 > 50)else "" %}
+        {% set r4="●" if not factor6 > 25 else "" %}
+        <span class="table1_3">{{ r1 }}</span>
+        <span class="table1_4">{{ r2 }}</span>
+        <span class="table1_5">{{ r3 }}</span>
+        <span class="table1_6">{{ r4 }}</span>
       </div>
 
       <div>
         <div class="hexagon_box1">
           <span class="hexagon_text">주의집중력</span>
-          <span class="hexagon_value">{{ section1.factor1 }}%</span>
+          <span class="hexagon_value">{{ factor1 }}%</span>
         </div>
 
         <div class="hexagon_box2">
           <span class="hexagon_text">작업기억력</span>
-          <span class="hexagon_value">{{ section1.factor2 }}%</span>
+          <span class="hexagon_value">{{ factor2 }}%</span>
         </div>
 
         <div class="hexagon_box3">
           <span class="hexagon_text">집행기능</span>
-          <span class="hexagon_value">{{ section1.factor3 }}%</span>
+          <span class="hexagon_value">{{ factor3 }}%</span>
         </div>
 
         <div class="hexagon_box4">
           <span class="hexagon_text">행동조절력</span>
-          <span class="hexagon_value">{{ section1.factor4 }}%</span>
+          <span class="hexagon_value">{{ factor4 }}%</span>
         </div>
 
         <div class="hexagon_box5">
           <span class="hexagon_text">사회성</span>
-          <span class="hexagon_value">{{ section1.factor5 }}%</span>
+          <span class="hexagon_value">{{ factor5 }}%</span>
         </div>
 
         <div class="hexagon_box6">
           <span class="hexagon_text">충동자제력</span>
-          <span class="hexagon_value">{{ section1.factor6 }}%</span>
+          <span class="hexagon_value">{{ factor6 }}%</span>
         </div>
 
-        <div id="container" class="hexagon_graph"></div>
+        <div class="hexagon_graph">
+          {% set image_name = "hexagon_parent.png" %}
+          <img style="width: 95%; position: absolute; top: 70px; left: 10px;"
+            src="{{ absolute_path }}{{ image_name | img }}" />
+        </div>
 
         {% set image_name = "hexagon1_1.png" %}
-        <img class="hexagon1" src="{{ image_name | img }}" />
+        <img class="hexagon1" src="{{ absolute_path }}{{ image_name | img }}" />
 
         {% set image_name = "hexagon1_2.png" %}
-        <img class="hexagon2" src="{{ image_name | img }}" />
+        <img class="hexagon2" src="{{ absolute_path }}{{ image_name | img }}" />
 
         {% set image_name = "hexagon1_3.png" %}
-        <img class="hexagon3" src="{{ image_name | img }}" />
+        <img class="hexagon3" src="{{ absolute_path }}{{ image_name | img }}" />
 
         {% set image_name = "hexagon1_4.png" %}
-        <img class="hexagon4" src="{{ image_name | img }}" />
+        <img class="hexagon4" src="{{ absolute_path }}{{ image_name | img }}" />
       </div>
     </div>
 
@@ -218,67 +178,98 @@
       </div>
 
       <div class="desc_area">
-        <div class="circle">
+        {% set color = "excellent" if factor1 > 75
+        else "good" if (factor1 > 50 and not factor1 > 75)
+        else "average" if (factor1 > 25 and not factor1 > 50)
+        else "poor" %}
+        <div class="circle {{ color }}">
           <span> 보통 </span>
         </div>
         <div class="desc_text_left">
-          <span class="desc_title">{{Performance_evaluation.commonly.title}}</span>
-          <span class="desc_desc">{{Performance_evaluation.commonly.desc}}</span>
+          <span class="desc_title">주의집중력</span> <br>
+          <span class="desc_desc">주의집중력이 좋을수록 과제 중에 급격한 움직임을 보이지 않고, 한 위치에서 꾸준히 한 가지 과제에 몰두하는 패턴을 보입니다. 반대로 주의력집중력이 낮은
+            경우 몸을 좌우로 흔들거나 안절부절 못하는 모습이 많이 나타나므로, 이러한 움직임 전체를 종합한 결과를 주의집중력의 지표로 볼 수 있습니다.</span>
         </div>
       </div>
 
       <div class="desc_area">
-        <div class="circle">
+        {% set color = "excellent" if factor2 > 75
+        else "good" if (factor2 > 50 and not factor2 > 75)
+        else "average" if (factor2 > 25 and not factor2 > 50)
+        else "poor" %}
+        <div class="circle {{ color }}">
           <span> 보통 </span>
         </div>
         <div class="desc_text_left">
-          <span class="desc_title">{{Performance_evaluation.commonly1.title}}</span>
-          <span class="desc_desc">{{Performance_evaluation.commonly1.desc}}</span>
+          <span class="desc_title">작업기억력</span><br>
+          <span class="desc_desc">작업기억력이 좋을수록 과거의 경험이나 학습을 통해 획득한 정보를 저장하는 능력이 뛰어나며, 예전에 경험한 비슷한 문제에 직면했을 때 빠르게
+            문제를 해결하는 모습을 보여줍니다. 반대로 작업기억력이 낮을 경우 일상적인 정보 혹은 주요한 일정을 잊어버리며, 정도가 심할 경우 낮은 작업
+            수행력으로 연결되기도 합니다.</span>
         </div>
       </div>
 
       <div class="desc_area">
-        <div class="circle">
+        {% set color = "excellent" if factor3 > 75
+        else "good" if (factor3 > 50 and not factor3 > 75)
+        else "average" if (factor3 > 25 and not factor3 > 50)
+        else "poor" %}
+        <div class="circle {{ color }}">
           <span> 경계 </span>
         </div>
         <div class="desc_text_left">
-          <span class="desc_title">{{Performance_evaluation.boundary1.title}}</span>
-          <span class="desc_desc">{{Performance_evaluation.boundary1.desc}}</span>
+          <span class="desc_title">집행기능</span><br>
+          <span class="desc_desc">집행기능이 좋을수록 빠르고 정확하게 외부 상황을 판단하여 목표를 달성하기 위한 계획을 수립하고 행동합니다. 반대로 집행기능이 나쁠수록
+            목표 · 상황에 대한 분석력이 떨어지며, 수립한 계획을 행동으로 옮기기까지 많은 시간이 소요됩니다.</span>
         </div>
       </div>
 
       <div class="desc_area">
-        <div class="circle">
+        {% set color = "excellent" if factor4 > 75
+        else "good" if (factor4 > 50 and not factor4 > 75)
+        else "average" if (factor4 > 25 and not factor4 > 50)
+        else "poor" %}
+        <div class="circle {{ color }}">
           <span> 미흡 </span>
         </div>
         <div class="desc_text_left">
-          <span class="desc_title">{{Performance_evaluation.inadequate.title}}</span>
-          <span class="desc_desc">{{Performance_evaluation.inadequate.desc}}</span>
+          <span class="desc_title">행동조절력</span><br>
+          <span class="desc_desc">행동조절력이 좋을수록 빠르고 정확하게 외부 상황을 판단하여 자신의 행동을 컨트롤합니다. 반대로 행동조절력이 나쁠수록 자제력이 낮아지며, 소수의 방해 자극에
+            취약하여 반응이 늦어집니다.</span>
         </div>
       </div>
 
       <div class="desc_area">
-        <div class="circle">
+        {% set color = "excellent" if factor5 > 75
+        else "good" if (factor5 > 50 and not factor5 > 75)
+        else "average" if (factor5 > 25 and not factor5 > 50)
+        else "poor" %}
+        <div class="circle {{ color }}">
           <span> 경계 </span>
         </div>
         <div class="desc_text_left">
-          <span class="desc_title">{{Performance_evaluation.boundary2.title}}</span>
-          <span class="desc_desc">{{Performance_evaluation.boundary2.desc}}</span>
+          <span class="desc_title">사회성</span><br>
+          <span class="desc_desc">사회성이 좋을수록 다른 사람과 사교적이며 협동심이 강하고 친화력이 좋아서 사회에 잘 적응합니다. 반대로 사회성이 낮은 경우 타인과 협력하고
+            자 하는 의지가 부족하고 상대방의 입장이나 생각을 고려하지 않는 경우가 많습니다.</span>
         </div>
       </div>
 
       <div class="desc_area">
-        <div class="circle">
+        {% set color = "excellent" if factor6 > 75
+        else "good" if (factor6 > 50 and not factor6 > 75)
+        else "average" if (factor6 > 25 and not factor6 > 50)
+        else "poor" %}
+        <div class="circle {{ color }}">
           <span> 보통 </span>
         </div>
         <div class="desc_text_left">
-          <span class="desc_title">{{Performance_evaluation.commonly2.title}}</span>
-          <span class="desc_desc">{{Performance_evaluation.commonly2.desc}}</span>
+          <span class="desc_title">충동자제력</span><br>
+          <span class="desc_desc">충동자제력이 좋을수록 자신의 욕구를 지연시키면서 자신의 행동을 조절할 수 있습니다. 또한 자신의 행동을 조절할 수 있기 때문에, 상대방의 입
+            장도 고려하거나 배려하는 등 적절한 사회적 관계를 통해 원만한 교우 관계를 형성할 수 있습니다. 반대로 충동자제력이 낮을 경우, 결과를 예상하
+            지 못한 채 불쑥 행동하는 경향을 보입니다.</span>
         </div>
       </div>
     </div>
   </div>
 </body>
-<script src="../static/js/print.js"></script>
 
 </html>

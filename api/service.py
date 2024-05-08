@@ -15,7 +15,7 @@ def reportPdf(template_name, data):
     absolute_path = '/app'
 
     #production
-    # html_path = os.path.join(os.path.abspath('api/templates'), template_name)
+    #html_path = os.path.join(os.path.abspath('api/templates'), template_name)
     html_path = os.path.join(os.path.abspath('api/templates_dev'), template_name) 
     with open(html_path, 'r', encoding='utf-8') as f:
         html_template = f.read()
@@ -23,8 +23,8 @@ def reportPdf(template_name, data):
     
     options = {
         #local
-        'page-width': '25.83in',
-        'page-height': '36.54in',
+        'page-width': '25in',
+        'page-height': '36in',
 
         'page-size': 'A4',
         'margin-top': '0mm',
@@ -46,7 +46,7 @@ def reportPdf(template_name, data):
     
     return send_file(pdf_path, as_attachment=True)
 
-def drawHexagon(data):
+def drawHexagon(data, image_name):
     fig, ax = plt.subplots()
     ax.set_aspect('equal')
 
@@ -77,7 +77,7 @@ def drawHexagon(data):
     ax.set_ylim(-0.6, 1.9)
     ax.set_axis_off()
 
-    image_path = os.path.join(os.path.abspath('static/assets/images'), 'hexagon.png')
+    image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
     plt.savefig(image_path, bbox_inches='tight', transparent=True)
 
 def drawScatterPlot(x, y, image_name):

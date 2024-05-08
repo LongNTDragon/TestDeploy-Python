@@ -45,7 +45,7 @@ def expert02():
         }
     
     data = request.json
-    drawHexagon(data)
+    drawHexagon(data, 'hexagon_expert.png')
     drawScatterPlotNoAxis(data['prompted_percentile'], data['unprompted_percentile'], 'graph_scatter_plot_prompt_unprompted.png')
     return reportPdf('expert_02.html', data)
 
@@ -95,3 +95,18 @@ def expert04():
     drawHeartRatePlot(data['y_axis'], 'Y', '#ffcc66', 'Y_axis.png')
     drawHeartRatePlot(data['z_axis'], 'Z', '#b0d3ad', 'Z_axis.png')
     return reportPdf('expert_04.html', data)
+
+def expert05():
+    messageArr = []
+    validateInfo('date', request.json, messageArr)
+    validateInfo('name', request.json, messageArr)
+    validateInfo('age', request.json, messageArr)
+    validateInfo('gender', request.json, messageArr)
+
+    if(len(messageArr) > 0):
+        return {
+            'status': False,
+            'messages':messageArr
+        }
+    data = request.json
+    return reportPdf('expert_05.html', data)

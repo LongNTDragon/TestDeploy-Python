@@ -2,23 +2,22 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" type="text/css" href="{{ absolute_pat }}{{ 'pretendard-font.css' | css }}">
-    <link rel="stylesheet" type="text/css" href="{{ absolute_pat }}{{ 'parent_01.css' | css }}">
-    <link rel="stylesheet" type="text/css" href="{{ absolute_pat }}{{ 'print.css' | css }}">
+    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'pretendard-font-wkhtmltopdf.css' | css }}">
+    <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_01.css' | css }}">
 </head>
 
 <body>
     <div class="report">
-        <button class="btn_print" id="printreport" onclick="printReport()">Print</button>
         <span class="logo_transparent_back_2">
             {% set image_name = "logo_transparent_back_2.png" %}
-            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+            <img src="{{ absolute_path }}{{ image_name | img }}" />
         </span>
 
         <span class="logohippbrand">
             {% set image_name = "Hippebrand.png" %}
-            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+            <img src="{{ absolute_path }}{{ image_name | img }}">
         </span>
 
         <div class="khungtieude">
@@ -45,7 +44,7 @@
 
         <span class="anhgiua">
             {% set image_name = "자산_18@4x.png" %}
-            <img src="{{ image_name | img }}" srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+            <img src="{{ absolute_path }}{{ image_name | img }}" />
         </span>
 
         <div class="khunggiua">
@@ -72,6 +71,5 @@
         </span>
     </div>
 </body>
-<script src="../static/js/print.js"></script>
 
 </html>
