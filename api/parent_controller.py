@@ -15,7 +15,6 @@ def parent01():
             'messages':messageArr
         }
     data = request.json
-    drawGrowthPlot(50, 'parent01_growth.png')
     return reportPdf('parent_01.html', data)
 
 # def parent02():
@@ -60,9 +59,12 @@ def parent03():
 
 def parent04():
     messageArr = []
+    validateInfo('factor1', request.json, messageArr)
+
     validateInfo('date', request.json, messageArr)
     validateInfo('name', request.json, messageArr)
     validateInfo('age', request.json, messageArr)
+    validateInfo('gender', request.json, messageArr)
     
     if(len(messageArr) > 0):
         return {
@@ -71,7 +73,7 @@ def parent04():
         }
     
     data = request.json
-    drawHeartRatePlot(data)
+    drawGrowthPlot(data['factor1'], 'parent04_growth.png')
     return reportPdf('parent_04.html', data)
 
 def parent05():

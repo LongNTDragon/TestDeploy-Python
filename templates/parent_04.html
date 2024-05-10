@@ -40,8 +40,7 @@
       <span class="title title1"> 2. 작업기억력 </span>
 
       {% set image_name = "parent01_growth.png" %}
-      <img style="position: relative;left: -10px; top: 20px;" src="{{ image_name | img }}"
-        srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
+      <img style="position: relative;left: -10px; top: 20px;" src="{{ image_name | img }}" />
 
       <div class="table">
         <div class="line1">
@@ -52,18 +51,16 @@
           <div class="column_title column5">우수</div>
         </div>
         <div class="line2">
-          <div class="column_title column1"></div>
-
-          {% set classname = "column2" if result.0 == 1 else ""%}
+          {% set classname = "column2" if result.0 == 1 else "column0"%}
           <div class="column_title {{ classname }}">&#10003;</div>
 
-          {% set classname = "column3" if result.1 == 1 else ""%}
+          {% set classname = "column3" if result.1 == 1 else "column0"%}
           <div class="column_title {{ classname }}">&#10003;</div>
 
-          {% set classname = "column4" if result.2 == 1 else ""%}
+          {% set classname = "column4" if result.2 == 1 else "column0"%}
           <div class="column_title {{ classname }}">&#10003;</div>
 
-          {% set classname = "column5" if result.3 == 1 else ""%}
+          {% set classname = "column5" if result.3 == 1 else "column0"%}
           <div class="column_title {{ classname }}">&#10003;</div>
         </div>
       </div>

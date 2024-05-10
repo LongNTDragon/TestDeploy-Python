@@ -5,12 +5,13 @@
 }
 
 .title3 {
-    display: flex;
     font-size: 46px;
-    justify-content: space-between;
 }
 
 .divider3 {
+    position: absolute;
+    top: 0px;
+    left: 365px;
     width: 1925px;
     height: 4px;
     margin-top: 25px;

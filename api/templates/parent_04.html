@@ -2,15 +2,14 @@
 <html>
 
 <head>
-  <base href="http://127.0.0.1:8888">
   <meta charset="utf-8">
   <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ 'pretendard-font.css' | css }}" />
-  <link rel="stylesheet" type="text/css" href="{{ 'parent_04.css' | css }}" />
-  <link rel="stylesheet" type="text/css" href="{{ 'parent_04_session1.css' | css }}" />
-  <link rel="stylesheet" type="text/css" href="{{ 'parent_04_session2.css' | css }}" />
-  <link rel="stylesheet" type="text/css" href="{{ 'parent_04_session3.css' | css }}" />
-  <link rel="stylesheet" type="text/css" href="{{ 'parent_04_session4.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'pretendard-font-wkhtmltopdf.css' | css }}">
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04_session1.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04_session2.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04_session3.css' | css }}" />
+  <link rel="stylesheet" type="text/css" href="{{ absolute_path }}{{ 'parent_04_session4.css' | css }}" />
 </head>
 
 <body>
@@ -38,7 +37,7 @@
       <span class="title title1"> 2. 작업기억력 </span>
 
       {% set image_name = "parent04_growth.png" %}
-      <img style="position: relative;left: -10px; top: 20px;" src="{{ image_name | img }}" />
+      <img style="position: relative;left: -10px; top: 20px;" src="{{ absolute_path }}{{ image_name | img }}" />
 
       <div class="table">
         <div class="line1">

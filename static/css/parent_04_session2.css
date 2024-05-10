@@ -1,24 +1,24 @@
 .session2 {
-    position: relative;
-    top: 330px;
+    position: absolute;
+    top: 1000px;
     margin: 0 95px;
 }
 
 .title2 {
-    display: flex;
     font-size: 46px;
-    margin-bottom: 20px;
-    justify-content: space-between;
 }
 
 .divider2 {
+    position: absolute;
+    top: 25px;
+    left: 270px;
     width: 2020px;
     height: 4px;
-    margin-top: 25px;
     background-color: #0c4999;
 }
 
 .desc2 {
+    margin-top: 20px;
     border: 1px solid gray;
     padding: 20px 60px 50px 60px;
     font-family: Pretendard;

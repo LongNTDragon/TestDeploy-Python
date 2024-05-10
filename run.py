@@ -3,7 +3,7 @@ import os
 
 from flask import Flask, jsonify, render_template, request, url_for
 from api.expert_controller import expert01, expert02, expert03, expert04, expert05
-from api.parent_controller import parent01, parent03
+from api.parent_controller import parent01, parent03, parent04
 
 app = Flask(__name__)
 TMP_PATH = os.path.join(app.root_path, "static", "cache", "")
@@ -88,6 +88,10 @@ def reportParent01():
 @app.route("/parent_03", methods=['POST'])
 def reportParent03():
     return parent03()
+
+@app.route("/parent_04", methods=['POST'])
+def reportParent04():
+    return parent04()
 
 if __name__ == '__main__':
     app.run(port=8888, debug=True)
