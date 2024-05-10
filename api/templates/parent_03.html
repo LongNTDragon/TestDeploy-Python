@@ -12,7 +12,7 @@
   <div class="report">
     <div class="header">
       <div class="header_left">
-        <span class="header_left_number">02</span>
+        <span class="header_left_number">01</span>
         <span class="header_left_text">영역별 결과 해석</span>
       </div>
       <div class="header_right">
@@ -24,17 +24,17 @@
         <div class="header_right_value">
           <p>{{ date }}</p>
           <p>{{ name }}</p>
-          <p>{{ age }}세/{{ gender }}</p>
+          <p>만 {{ age }}세/{{ gender }}</p>
         </div>
       </div>
     </div>
 
     <div class="session1">
       <div class="table1_bar2">
-        <span style="color: #83bb6a;" class="table1_bar2_1">우수</span>
-        <span style="color: #ffbc20;" class="table1_bar2_2">보통</span>
-        <span style="color: #ef7320;" class="table1_bar2_3">경계</span>
-        <span style="color: #e14747;" class="table1_bar2_4">미흡</span>
+        <span class="table1_bar2_1">우수</span>
+        <span class="table1_bar2_2">보통</span>
+        <span class="table1_bar2_3">경계</span>
+        <span class="table1_bar2_4">미흡</span>
       </div>
 
       <div class="table1_bar1">
@@ -45,79 +45,79 @@
       <div class="table1_box1">
         <span class="table1_1">주의집중력</span>
         <span class="table1_2">{{ factor1 }}%</span>
-        {% set r1 = "●" if factor1 > 75 else "" %}
-        {% set r2 = "●" if (factor1 > 50 and not factor1 > 75) else "" %}
-        {% set r3="●" if (factor1 > 25 and not factor1 > 50)else "" %}
-        {% set r4="●" if not factor1 > 25 else "" %}
-        <span class="table1_3">{{ r1 }}</span>
-        <span class="table1_4">{{ r2 }}</span>
-        <span class="table1_5">{{ r3 }}</span>
-        <span class="table1_6">{{ r4 }}</span>
+        {% set r1 = "●" if factor1 >= 80 else "" %}
+        {% set r2 = "●" if (factor1 >= 45 and not factor1 >= 80) else "" %}
+        {% set r3="●" if (factor1 >= 35 and not factor1 >= 45) else "" %}
+        {% set r4="●" if not factor1 >= 35 else "" %}
+        <span class="table1_3">{{ r4 }}</span>
+        <span class="table1_4">{{ r3 }}</span>
+        <span class="table1_5">{{ r2 }}</span>
+        <span class="table1_6">{{ r1 }}</span>
       </div>
 
       <div class="table1_box2">
         <span class="table1_1">작업기억력</span>
         <span class="table1_2">{{ factor2 }}%</span>
-        {% set r1 = "●" if factor2 > 75 else "" %}
-        {% set r2 = "●" if (factor2 > 50 and not factor2 > 75) else "" %}
-        {% set r3="●" if (factor2 > 25 and not factor2 > 50)else "" %}
-        {% set r4="●" if not factor2 > 25 else "" %}
-        <span class="table1_3">{{ r1 }}</span>
-        <span class="table1_4">{{ r2 }}</span>
-        <span class="table1_5">{{ r3 }}</span>
-        <span class="table1_6">{{ r4 }}</span>
+        {% set r1 = "●" if factor2 >= 80 else "" %}
+        {% set r2 = "●" if (factor2 >= 45 and not factor2 >= 80) else "" %}
+        {% set r3="●" if (factor2 >= 35 and not factor2 >= 45) else "" %}
+        {% set r4="●" if not factor2 >= 35 else "" %}
+        <span class="table1_3">{{ r4 }}</span>
+        <span class="table1_4">{{ r3 }}</span>
+        <span class="table1_5">{{ r2 }}</span>
+        <span class="table1_6">{{ r1 }}</span>
       </div>
 
       <div class="table1_box3">
         <span class="table1_1">집행기능</span>
         <span class="table1_2">{{ factor3 }}%</span>
-        {% set r1 = "●" if factor3 > 75 else "" %}
-        {% set r2 = "●" if (factor3 > 50 and not factor3 > 75) else "" %}
-        {% set r3="●" if (factor3 > 25 and not factor3 > 50)else "" %}
-        {% set r4="●" if not factor3 > 25 else "" %}
-        <span class="table1_3">{{ r1 }}</span>
-        <span class="table1_4">{{ r2 }}</span>
-        <span class="table1_5">{{ r3 }}</span>
-        <span class="table1_6">{{ r4 }}</span>
+        {% set r1 = "●" if factor3 >= 80 else "" %}
+        {% set r2 = "●" if (factor3 >= 45 and not factor3 >= 80) else "" %}
+        {% set r3="●" if (factor3 >= 35 and not factor3 >= 45) else "" %}
+        {% set r4="●" if not factor3 >= 35 else "" %}
+        <span class="table1_3">{{ r4 }}</span>
+        <span class="table1_4">{{ r3 }}</span>
+        <span class="table1_5">{{ r2 }}</span>
+        <span class="table1_6">{{ r1 }}</span>
       </div>
 
       <div class="table1_box4">
         <span class="table1_1">행동조절력</span>
         <span class="table1_2">{{ factor4 }}%</span>
-        {% set r1 = "●" if factor4 > 75 else "" %}
-        {% set r2 = "●" if (factor4 > 50 and not factor4 > 75) else "" %}
-        {% set r3="●" if (factor4 > 25 and not factor4 > 50)else "" %}
-        {% set r4="●" if not factor4 > 25 else "" %}
-        <span class="table1_3">{{ r1 }}</span>
-        <span class="table1_4">{{ r2 }}</span>
-        <span class="table1_5">{{ r3 }}</span>
-        <span class="table1_6">{{ r4 }}</span>
+        {% set r1 = "●" if factor4 >= 80 else "" %}
+        {% set r2 = "●" if (factor4 >= 45 and not factor4 >= 80) else "" %}
+        {% set r3="●" if (factor4 >= 35 and not factor4 >= 45) else "" %}
+        {% set r4="●" if not factor4 >= 35 else "" %}
+        <span class="table1_3">{{ r4 }}</span>
+        <span class="table1_4">{{ r3 }}</span>
+        <span class="table1_5">{{ r2 }}</span>
+        <span class="table1_6">{{ r1 }}</span>
       </div>
 
       <div class="table1_box5">
         <span class="table1_1">사회성</span>
         <span class="table1_2">{{ factor5 }}%</span>
-        {% set r1 = "●" if factor5 > 75 else "" %}
-        {% set r2 = "●" if (factor5 > 50 and not factor5 > 75) else "" %}
-        {% set r3="●" if (factor5 > 25 and not factor5 > 50)else "" %}
-        {% set r4="●" if not factor5 > 25 else "" %}
-        <span class="table1_3">{{ r1 }}</span>
-        <span class="table1_4">{{ r2 }}</span>
-        <span class="table1_5">{{ r3 }}</span>
-        <span class="table1_6">{{ r4 }}</span>
+        {% set r1 = "●" if factor5 >= 80 else "" %}
+        {% set r2 = "●" if (factor5 >= 45 and not factor5 >= 80) else "" %}
+        {% set r3="●" if (factor5 >= 35 and not factor5 >= 45) else "" %}
+        {% set r4="●" if not factor5 >= 35 else "" %}
+        <span class="table1_3">{{ r4 }}</span>
+        <span class="table1_4">{{ r3 }}</span>
+        <span class="table1_5">{{ r2 }}</span>
+        <span class="table1_6">{{ r1 }}</span>
       </div>
 
       <div class="table1_box6">
         <span class="table1_1">충동자제력</span>
         <span class="table1_2">{{ factor6 }}%</span>
-        {% set r1 = "●" if factor6 > 75 else "" %}
-        {% set r2 = "●" if (factor6 > 50 and not factor6 > 75) else "" %}
-        {% set r3="●" if (factor6 > 25 and not factor6 > 50)else "" %}
-        {% set r4="●" if not factor6 > 25 else "" %}
-        <span class="table1_3">{{ r1 }}</span>
-        <span class="table1_4">{{ r2 }}</span>
-        <span class="table1_5">{{ r3 }}</span>
-        <span class="table1_6">{{ r4 }}</span>
+        {% set r1 = "●" if factor6 >= 80 else "" %}
+        {% set r2 = "●" if (factor6 >= 45 and not factor6 >= 80) else "" %}
+        {% set r3="●" if (factor6 >= 35 and not factor6 >= 45) else "" %}
+        {% set r4="●" if not factor6 >= 35 else "" %}
+        <span class="table1_3">{{ r4 }}</span>
+        <span class="table1_4">{{ r3 }}</span>
+        <span class="table1_5">{{ r2 }}</span>
+        <span class="table1_6">{{ r1 }}</span>
       </div>
 
       <div>
@@ -178,9 +178,9 @@
       </div>
 
       <div class="desc_area">
-        {% set color = "excellent" if factor1 > 75
-        else "good" if (factor1 > 50 and not factor1 > 75)
-        else "average" if (factor1 > 25 and not factor1 > 50)
+        {% set color = "excellent" if factor1 >= 80
+        else "good" if (factor1 >= 45 and not factor1 >= 80)
+        else "average" if (factor1 >= 35 and not factor1 >= 45)
         else "poor" %}
         <div class="circle {{ color }}">
           <span> 보통 </span>
@@ -193,9 +193,9 @@
       </div>
 
       <div class="desc_area">
-        {% set color = "excellent" if factor2 > 75
-        else "good" if (factor2 > 50 and not factor2 > 75)
-        else "average" if (factor2 > 25 and not factor2 > 50)
+        {% set color = "excellent" if factor2 >= 80
+        else "good" if (factor2 >= 45 and not factor2 >= 80)
+        else "average" if (factor2 >= 35 and not factor2 >= 45)
         else "poor" %}
         <div class="circle {{ color }}">
           <span> 보통 </span>
@@ -209,9 +209,9 @@
       </div>
 
       <div class="desc_area">
-        {% set color = "excellent" if factor3 > 75
-        else "good" if (factor3 > 50 and not factor3 > 75)
-        else "average" if (factor3 > 25 and not factor3 > 50)
+        {% set color = "excellent" if factor3 >= 80
+        else "good" if (factor3 >= 45 and not factor3 >= 80)
+        else "average" if (factor3 >= 35 and not factor3 >= 45)
         else "poor" %}
         <div class="circle {{ color }}">
           <span> 경계 </span>
@@ -224,9 +224,9 @@
       </div>
 
       <div class="desc_area">
-        {% set color = "excellent" if factor4 > 75
-        else "good" if (factor4 > 50 and not factor4 > 75)
-        else "average" if (factor4 > 25 and not factor4 > 50)
+        {% set color = "excellent" if factor4 >= 80
+        else "good" if (factor4 >= 45 and not factor4 >= 80)
+        else "average" if (factor4 >= 35 and not factor4 >= 45)
         else "poor" %}
         <div class="circle {{ color }}">
           <span> 미흡 </span>
@@ -239,9 +239,9 @@
       </div>
 
       <div class="desc_area">
-        {% set color = "excellent" if factor5 > 75
-        else "good" if (factor5 > 50 and not factor5 > 75)
-        else "average" if (factor5 > 25 and not factor5 > 50)
+        {% set color = "excellent" if factor5 >= 80
+        else "good" if (factor5 >= 45 and not factor5 >= 80)
+        else "average" if (factor5 >= 35 and not factor5 >= 45)
         else "poor" %}
         <div class="circle {{ color }}">
           <span> 경계 </span>
@@ -254,9 +254,9 @@
       </div>
 
       <div class="desc_area">
-        {% set color = "excellent" if factor6 > 75
-        else "good" if (factor6 > 50 and not factor6 > 75)
-        else "average" if (factor6 > 25 and not factor6 > 50)
+        {% set color = "excellent" if factor6 >= 80
+        else "good" if (factor6 >= 45 and not factor6 >= 80)
+        else "average" if (factor6 >= 35 and not factor6 >= 45)
         else "poor" %}
         <div class="circle {{ color }}">
           <span> 보통 </span>

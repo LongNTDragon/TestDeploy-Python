@@ -126,9 +126,10 @@ body {
     top: 380px;
     left: 130px;
     width: 510px;
-    height: 133px;
-    color: #fff;
-    background-color: #0c4999;
+    height: 100px;
+    border-bottom: 5px solid #000;
+    /* color: #fff; */
+    /* background-color: #0c4999; */
 }
 
 .table1_bar2 {
@@ -136,9 +137,10 @@ body {
     top: 380px;
     left: 638px;
     width: 1712px;
-    height: 133px;
-    color: #fff;
-    background-color: #0c4999;
+    height: 100px;
+    border-bottom: 5px solid #000;
+    /* color: #fff; */
+    /* background-color: #0c4999; */
 }
 
 .table1_bar1_1 {
@@ -174,66 +176,70 @@ body {
 }
 
 .table1_bar2_1 {
+    background-color: #e14747;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     position: absolute;
     top: 37px;
-    left: 139px;
-    height: 45px;
-    object-fit: contain;
+    left: 95px;
+    height: 63px;
+    width: 150px;
     font-family: Pretendard;
     font-size: 38px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.58;
-    letter-spacing: -0.57px;
     text-align: center;
 }
 
 .table1_bar2_2 {
+    background-color: #ef7320;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     position: absolute;
     top: 37px;
-    left: 319px;
-    height: 45px;
-    object-fit: contain;
+    left: 275px;
+    height: 63px;
+    width: 150px;
     font-family: Pretendard;
     font-size: 38px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.58;
-    letter-spacing: -0.57px;
     text-align: center;
 }
 
 .table1_bar2_3 {
+    background-color: #ffbc20;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     position: absolute;
     top: 37px;
-    left: 499px;
-    height: 45px;
-    object-fit: contain;
+    left: 455px;
+    height: 63px;
+    width: 150px;
     font-family: Pretendard;
     font-size: 38px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.58;
-    letter-spacing: -0.57px;
     text-align: center;
 }
 
 .table1_bar2_4 {
+    background-color: #83bb6a;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     position: absolute;
     top: 37px;
-    left: 679px;
-    height: 45px;
-    object-fit: contain;
+    left: 635px;
+    height: 63px;
+    width: 150px;
     font-family: Pretendard;
     font-size: 38px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.58;
-    letter-spacing: -0.57px;
     text-align: center;
 }
 
@@ -342,7 +348,7 @@ body {
     line-height: 1.67;
     letter-spacing: -0.54px;
     text-align: left;
-    color: #83bb6a;
+    color: #e14747;
 }
 
 .table1_4 {
@@ -359,7 +365,7 @@ body {
     line-height: 1.67;
     letter-spacing: -0.54px;
     text-align: left;
-    color: #ffbc20;
+    color: #ef7320;
 }
 
 .table1_5 {
@@ -376,7 +382,7 @@ body {
     line-height: 1.67;
     letter-spacing: -0.54px;
     text-align: left;
-    color: #ef7320;
+    color: #ffbc20;
 }
 
 .table1_6 {
@@ -393,7 +399,7 @@ body {
     line-height: 1.67;
     letter-spacing: -0.54px;
     text-align: left;
-    color: #e14747;
+    color: #83bb6a;
 }
 
 .hexagon_box1 {
