@@ -5,7 +5,8 @@ from matplotlib.patches import Polygon, Circle # type: ignore
 from flask import render_template_string, send_file
 import pandas as pd # type: ignore
 from scipy.signal import butter, filtfilt # type: ignore
-
+import numpy as np # type: ignore
+plt.rcParams['font.family'] = 'Malgun Gothic'
 
 def validateInfo(attribute, object, messageArr):
     if attribute not in object:
@@ -23,8 +24,7 @@ def reportPdf(template_name, data):
     
     options = {
         #local
-        'page-width': '25in',
-        'page-height': '36in',
+        'zoom': 0.6,
 
         'page-size': 'A4',
         'margin-top': '0mm',
@@ -80,21 +80,26 @@ def drawHexagon(data, image_name):
     image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
     plt.savefig(image_path, bbox_inches='tight', transparent=True)
 
-def drawScatterPlot(x, y, image_name):
+def drawScatterPlot(x, y, image_name, name):
     x_coordinate = x
     y_coordinate = y
 
     plt.figure(figsize=(9, 9))
 
+    extraX = 9 if x < 85 else -9
+    extraY = 0.1 if y < -0.95 else -0.1
+    
     plt.scatter(x_coordinate, y_coordinate, color='green', zorder=2)
     plt.plot([x_coordinate, x_coordinate], [-x_coordinate, y_coordinate], color='green', linestyle='--', zorder=2)
     plt.plot([0, x_coordinate], [y_coordinate, y_coordinate], color='green', linestyle='--', zorder=2)
+    plt.text(x + extraX, y + extraY, name + ' 어린이', color='#45b480', fontsize=12, ha='center', va='center', bbox=dict(boxstyle='round', facecolor='#fff', edgecolor='none'))
+
 
     plt.grid(True)
 
     plt.xticks(range(72, 145, 6))
     plt.xlim(68, 148)
-    plt.ylim(-1.1, 1.1) 
+    plt.ylim(-1.1, 1.1)
 
     image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
     plt.savefig(image_path, bbox_inches='tight', transparent=True)
@@ -134,9 +139,14 @@ def drawHeartRatePlot(axis_value, column, color, image_name):
     image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
     plt.savefig(image_path, bbox_inches='tight')
 
-def drawScatterPlotNoAxis(x, y, image_name):
+def drawScatterPlotNoAxis(x, y, image_name, name):
+    extraX = 9 if x < 35 else -9
+    extraY = 5 if y < 25 else -5
+
     plt.figure(figsize=(12.7, 9.5))
     plt.scatter(x, y, color='green')
+    plt.text(x + extraX, y + extraY, name + ' 어린이', color='#45b480', fontsize=12, ha='center', va='center', bbox=dict(boxstyle='round', facecolor='#fff', edgecolor='none'))
+
 
     plt.axhline(y=y, linestyle='--', color='green')
     plt.axvline(x=x, linestyle='--', color='green')
@@ -150,3 +160,27 @@ def drawScatterPlotNoAxis(x, y, image_name):
 
     image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
     plt.savefig(image_path, bbox_inches='tight', transparent=True)
+
+def drawGrowthPlot(percent, image_name):
+    percentiles = np.linspace(0, 100, 1001)
+    values = np.sin(percentiles * np.pi / 200) * 100 
+
+    plt.figure(figsize=(29.4, 5))
+    plt.plot(percentiles, values, marker='o', markersize=10, markevery=[percent*10], color='#0c4999')
+    
+    extra = 0
+    if(percent > 10 and percent <= 34):
+        extra += 10
+    if(percent > 34 and percent <= 75):
+        extra += 20
+    if(percent > 75 and percent <= 95):
+        extra += 5
+    plt.plot([percent, percent], [percent + extra, 0], linestyle='dashed', color='#0c4999')
+    plt.text(percent, percent-extra+15, percent, fontsize=20, ha='right')
+
+    plt.gca().axes.get_yaxis().set_visible(False)
+    plt.xticks(range(0, 101, 100))
+    plt.xlim(0, 101)
+    plt.xlabel('(percentile)')
+    image_path = os.path.join(os.path.abspath('static/assets/images'), image_name)
+    plt.savefig(image_path, bbox_inches='tight')

@@ -54,10 +54,10 @@
     <div class="table1_box1">
       <span class="table1_1">주의집중력</span>
       <span class="table1_2">{{ factor1 }}%</span>
-      {% set r1 = "●" if factor1 > 75 else "" %}
-      {% set r2 = "●" if (factor1 > 50 and not factor1 > 75) else "" %}
-      {% set r3="●" if (factor1 > 25 and not factor1 > 50)else "" %}
-      {% set r4="●" if not factor1 > 25 else "" %}
+      {% set r1 = "●" if factor1 >= 80 else "" %}
+      {% set r2 = "●" if (factor1 >= 45 and not factor1 >= 80) else "" %}
+      {% set r3="●" if (factor1 >= 35 and not factor1 >= 45) else "" %}
+      {% set r4="●" if not factor1 >= 35 else "" %}
       <span class="table1_3">{{ r1 }}</span>
       <span class="table1_4">{{ r2 }}</span>
       <span class="table1_5">{{ r3 }}</span>
@@ -67,10 +67,10 @@
     <div class="table1_box2">
       <span class="table1_1">작업기억력</span>
       <span class="table1_2">{{ factor2 }}%</span>
-      {% set r1 = "●" if factor2 > 75 else "" %}
-      {% set r2 = "●" if (factor2 > 50 and not factor2 > 75) else "" %}
-      {% set r3="●" if (factor2 > 25 and not factor2 > 50)else "" %}
-      {% set r4="●" if not factor2 > 25 else "" %}
+      {% set r1 = "●" if factor2 >= 80 else "" %}
+      {% set r2 = "●" if (factor2 >= 45 and not factor2 >= 80) else "" %}
+      {% set r3="●" if (factor2 >= 35 and not factor2 >= 45) else "" %}
+      {% set r4="●" if not factor2 >= 35 else "" %}
       <span class="table1_3">{{ r1 }}</span>
       <span class="table1_4">{{ r2 }}</span>
       <span class="table1_5">{{ r3 }}</span>
@@ -80,10 +80,10 @@
     <div class="table1_box3">
       <span class="table1_1">집행기능</span>
       <span class="table1_2">{{ factor3 }}%</span>
-      {% set r1 = "●" if factor3 > 75 else "" %}
-      {% set r2 = "●" if (factor3 > 50 and not factor3 > 75) else "" %}
-      {% set r3="●" if (factor3 > 25 and not factor3 > 50)else "" %}
-      {% set r4="●" if not factor3 > 25 else "" %}
+      {% set r1 = "●" if factor3 >= 80 else "" %}
+      {% set r2 = "●" if (factor3 >= 45 and not factor3 >= 80) else "" %}
+      {% set r3="●" if (factor3 >= 35 and not factor3 >= 45) else "" %}
+      {% set r4="●" if not factor3 >= 35 else "" %}
       <span class="table1_3">{{ r1 }}</span>
       <span class="table1_4">{{ r2 }}</span>
       <span class="table1_5">{{ r3 }}</span>
@@ -93,10 +93,10 @@
     <div class="table1_box4">
       <span class="table1_1">행동조절력</span>
       <span class="table1_2">{{ factor4 }}%</span>
-      {% set r1 = "●" if factor4 > 75 else "" %}
-      {% set r2 = "●" if (factor4 > 50 and not factor4 > 75) else "" %}
-      {% set r3="●" if (factor4 > 25 and not factor4 > 50)else "" %}
-      {% set r4="●" if not factor4 > 25 else "" %}
+      {% set r1 = "●" if factor4 >= 80 else "" %}
+      {% set r2 = "●" if (factor4 >= 45 and not factor4 >= 80) else "" %}
+      {% set r3="●" if (factor4 >= 35 and not factor4 >= 45) else "" %}
+      {% set r4="●" if not factor4 >= 35 else "" %}
       <span class="table1_3">{{ r1 }}</span>
       <span class="table1_4">{{ r2 }}</span>
       <span class="table1_5">{{ r3 }}</span>
@@ -106,10 +106,10 @@
     <div class="table1_box5">
       <span class="table1_1">사회성</span>
       <span class="table1_2">{{ factor5 }}%</span>
-      {% set r1 = "●" if factor5 > 75 else "" %}
-      {% set r2 = "●" if (factor5 > 50 and not factor5 > 75) else "" %}
-      {% set r3="●" if (factor5 > 25 and not factor5 > 50)else "" %}
-      {% set r4="●" if not factor5 > 25 else "" %}
+      {% set r1 = "●" if factor5 >= 80 else "" %}
+      {% set r2 = "●" if (factor5 >= 45 and not factor5 >= 80) else "" %}
+      {% set r3="●" if (factor5 >= 35 and not factor5 >= 45) else "" %}
+      {% set r4="●" if not factor5 >= 35 else "" %}
       <span class="table1_3">{{ r1 }}</span>
       <span class="table1_4">{{ r2 }}</span>
       <span class="table1_5">{{ r3 }}</span>
@@ -119,10 +119,10 @@
     <div class="table1_box6">
       <span class="table1_1">충동자제력</span>
       <span class="table1_2">{{ factor6 }}%</span>
-      {% set r1 = "●" if factor6 > 75 else "" %}
-      {% set r2 = "●" if (factor6 > 50 and not factor6 > 75) else "" %}
-      {% set r3="●" if (factor6 > 25 and not factor6 > 50)else "" %}
-      {% set r4="●" if not factor6 > 25 else "" %}
+      {% set r1 = "●" if factor6 >= 80 else "" %}
+      {% set r2 = "●" if (factor6 >= 45 and not factor6 >= 80) else "" %}
+      {% set r3="●" if (factor6 >= 35 and not factor6 >= 45) else "" %}
+      {% set r4="●" if not factor6 >= 35 else "" %}
       <span class="table1_3">{{ r1 }}</span>
       <span class="table1_4">{{ r2 }}</span>
       <span class="table1_5">{{ r3 }}</span>
@@ -278,44 +278,71 @@
     </div>
 
     <div>
-      <span class="desc2_title desc2_title1">과잉행동 우세형</span>
+      {% if (not prompted_percentile >= 37 and unprompted_percentile > 21) %}
+      <span class="desc2_title1">
+        {% set image_name = "check_117.png" %}
+        <img src="{{ image_name | img }}" />
+      </span>
+      {% endif %}
+      {% set check = "checked" if (not prompted_percentile >= 37 and unprompted_percentile > 21) else "" %}
+      <span class="desc2_title desc2_title1 {{ check }}">과잉행동 우세형</span>
 
       <span class="desc2_text desc2_text1">
         아동은 미션을 수행하면서 과제와 상관없는 불필요한 움직임을 보였습니다.
-        가정에서는 지시사항을 놓치는 경우가 흔해서 반복적인 설명이 요구될 수
-        있습니다.<br />
-        학교, 학원에서는 부주의한 실수가 많아 학업적 성취가 저조할 수
+        가정에서는 지시사항을 놓치는 경우가 흔해서 반복적인 설명이 요구될 수 <br />
+        있습니다. 학교, 학원에서는 부주의한 실수가 많아 학업적 성취가 저조할 수
         있습니다.
       </span>
     </div>
 
     <div>
-      <span class="desc2_title desc2_title2">행동 우세형</span>
+      {% if (prompted_percentile >= 37 and unprompted_percentile > 21) %}
+      <span class="desc2_title2">
+        {% set image_name = "check_117.png" %}
+        <img src="{{ image_name | img }}" />
+      </span>
+      {% endif %}
+      {% set check = "checked" if (prompted_percentile >= 37 and unprompted_percentile > 21) else "" %}
+      <span class="desc2_title desc2_title2 {{ check }}">행동 우세형</span>
 
       <span class="desc2_text desc2_text2">
         아동은 미션을 수행할 때 필요한 움직임을 보였지만, 그만큼 불필요한
         모습도 보였습니다. 가정이나 학교에서
-        <span>주의집중 할 수 있지만, 종종 쉽게 산만해 질 수 있습니다.<br />
-          이러한 비일관적인 모습으로 인하여 과목이나 아이의 컨디션에 따라 수행
+        <span>주의집중 할 수 있지만, 종종 쉽게 산만해 질 수 <br />
+          있습니다. 이러한 비일관적인 모습으로 인하여 과목이나 아이의 컨디션에 따라 수행
           편차를 보일 수 있습니다.</span>
       </span>
     </div>
 
     <div>
-      <span class="desc2_title desc2_title3">행동 절제형</span>
+      {% if (not prompted_percentile >= 37 and not unprompted_percentile >= 22) %}
+      <span class="desc2_title3">
+        {% set image_name = "check_117.png" %}
+        <img src="{{ image_name | img }}" />
+      </span>
+      {% endif %}
+      {% set check = "checked" if (not prompted_percentile >= 37 and not unprompted_percentile >= 22) else "" %}
+      <span class="desc2_title desc2_title3 {{ check }}">행동 절제형</span>
 
       <span class="desc2_text desc2_text3">
         아동은 미션을 수행할 때 움직임을 거의 보이지 않았습니다. 이러한 행동
         패턴이 강점으로 발휘될 경우에는 조심스럽고 신중하여 실수가 적을 수
-        있습니다. 그러나<br />
-        단점으로 작용할 때는 우유부단하고 위축되어 있기 때문에 적극성은 부족할
+        있습니다. <br />
+        그러나 단점으로 작용할 때는 우유부단하고 위축되어 있기 때문에 적극성은 부족할
         수 있습니다.
         <span>본인의 실제 능력에 비해 결과물은 미흡할 수 있습니다.</span>
       </span>
     </div>
 
     <div>
-      <span class="desc2_title desc2_title4">절제 행동 우세형</span>
+      {% if (prompted_percentile >= 37 and not unprompted_percentile >= 22) %}
+      <span class="desc2_title4">
+        {% set image_name = "check_117.png" %}
+        <img src="{{ image_name | img }}" />
+      </span>
+      {% endif %}
+      {% set check = "checked" if (prompted_percentile >= 37 and not unprompted_percentile >= 22) else "" %}
+      <span class="desc2_title desc2_title4 {{ check }}">절제 행동 우세형</span>
 
       <span class="desc2_text desc2_text4">
         아동은 미션을 수행할 때 과제에 필요한 움직임만 보였습니다. 평상시에도
@@ -326,7 +353,7 @@
     <span class="bottomline"></span>
 
     <span class="bottomleft">
-      {{ date }} / {{ name }} / {{ age }} / {{ gender }}
+      {{ date }} / {{ name }} / 만 {{ age }}세 / {{ '남' if gender == 0 else '여' }}
     </span>
     <span class="bottomright">1</span>
   </div>

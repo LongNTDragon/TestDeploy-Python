@@ -39,7 +39,9 @@
     <div class="session1">
       <span class="title title1"> 2. 작업기억력 </span>
 
-      <div class="graph"></div>
+      {% set image_name = "parent01_growth.png" %}
+      <img style="position: relative;left: -10px; top: 20px;" src="{{ image_name | img }}"
+        srcset="{{ image_name | img_2x }} 2x, {{ image_name | img_3x }} 3x">
 
       <div class="table">
         <div class="line1">

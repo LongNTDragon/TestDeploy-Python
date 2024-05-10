@@ -27,13 +27,13 @@
       <span class="table_bar1">주의 분산 유형 <span class="space">:</span>
         <span class="table_bar_value">{{ distraction_type }}</span></span>
 
-      <span class="table_bar2">Z-Score <span class="space">:</span>
+      <span style="left: 630px;" class="table_bar2">Z-Score <span class="space">:</span>
         <span class="table_bar_value">{{ z_score }}</span></span>
 
-      <span class="table_bar3">σ2(Variance) <span class="space">:</span>
+      <span style="left: 1150px;" class="table_bar3">σ2(Variance) <span class="space">:</span>
         <span class="table_bar_value">{{ variance }}</span></span>
 
-      <span class="table_bar4">Average σ2 <span class="space">:</span>
+      <span style="left: 1770px ;" class="table_bar4">Average σ2 <span class="space">:</span>
         <span class="table_bar_value">{{ variance_avg }}</span></span>
     </div>
 
@@ -46,16 +46,19 @@
       <span class="table_box1_3">σ2 < Average σ2</span>
     </div>
 
-    <div class="table_box2">
-      <span class="table_box2_1">Z-Score < 0</span>
+    <div class="table_box2" style="top: 650px;">
+      <span style="left: 370px;" class="table_box2_1">Z-Score < 0</span>
 
-          <span class="table_box2_1_1">
-            <span class="table_box2_title">주의 산만 지속형</span> <br />
-            아동은 미션 수행 중 주의력이 계속해서 흐트러졌습니다. 이로 인해 학습 상황에서 주의력을 유지하는 시간이 짧아지며, 지시 내용을 잊거나 과제를 시간 내에 완료하는 데 어려움을 겪을 수 있습니다.
+          <span style="left: 890px;" class="table_box2_1_1">
+            {% set bold = "text-bold" if (not z_score > 0 and variance > variance_avg) else "" %}
+            <span class="table_box2_title {{ bold }}">주의 산만 지속형</span> <br />
+            아동은 미션 수행 중 주의력이 계속해서 흐트러졌습니다. 이로 인해 학습 상황에서 주의력을 유지하는 시간이 짧아지며, 지시 내용을 잊거나 과제를 시간 내에 완료하는 데 어려움을 겪을 수
+            있습니다.
           </span>
 
-          <span class="table_box2_1_2">
-            <span class="table_box2_title">주의 산만 + 선택적 집중</span> <br />
+          <span style="right: 260px;" class="table_box2_1_2">
+            {% set bold = "text-bold" if (not z_score > 0 and not variance > variance_avg) else "" %} <span
+              class="table_box2_title {{ bold }}">주의 산만 + 선택적 집중</span> <br />
             아동은 인지적인 노력이 요구되는 상황에서 주의력에 어려움을 겪었지만, 관심사에 따라 주의를 집중할 수 있었습니다. 이로 인해 아동의 성취는 관심사에 따라 비일관적일 수 있습니다.
           </span>
     </div>
@@ -66,13 +69,15 @@
 
       <span class="table_box3_1">Z-Score > 0</span>
 
-      <p class="table_box3_1_1">
-        <span class="table_box2_title">주의 집중 + 선택적 산만</span> <br />
+      <p style="left: 770px;" class="table_box3_1_1">
+        {% set bold = "text-bold" if (z_score > 0 and variance > variance_avg) else "" %}
+        <span class="table_box2_title {{ bold }}">주의 집중 + 선택적 산만</span> <br />
         주의력 유지에는 일관성이 있었지만 외부 자극으로 인해 주의가 산만해졌습니다. 학습 환경을 적절히 조성하면 더 좋은 성과를 기대할 수 있습니다.
       </p>
 
-      <p style="right: 400px;" class="table_box3_1_2">
-        <span class="table_box2_title">주의 집중 지속형</span> <br />
+      <p style="right: 140px;" class="table_box3_1_2">
+        {% set bold = "text-bold" if (z_score > 0 and not variance > variance_avg) else "" %} <span
+          class="table_box2_title {{ bold }}">주의 집중 지속형</span> <br />
         아동은 미션을 수행하면서 주의력을 안정적으로 유지할 수 있었습니다. 노력을 통한 학습 상의 효율이 적절하겠습니다.
       </p>
     </div>
@@ -211,7 +216,7 @@
     <span class="bottomline"></span>
 
     <span class="bottomleft">
-      {{ date }} / {{ name }} / {{ age }} / {{ gender }}
+      {{ date }} / {{ name }} / 만 {{ age }}세 / {{ '남' if gender == 0 else '여' }}
     </span>
     <span class="bottomright">2</span>
   </div>

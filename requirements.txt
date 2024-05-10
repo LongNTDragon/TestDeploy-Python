@@ -4,3 +4,4 @@ pdfkit
 matplotlib
 pandas
 scipy
+numpy

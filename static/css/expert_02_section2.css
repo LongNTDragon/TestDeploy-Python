@@ -238,7 +238,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
-    letter-spacing: -0.54px;
     text-align: left;
     color: #2a2a2a;
 }
@@ -281,7 +280,6 @@
     line-height: 1.22;
     letter-spacing: -0.54px;
     text-align: left;
-    color: #303030;
 }
 
 .desc2_text_bold {
@@ -310,4 +308,9 @@
     position: absolute;
     top: 3050px;
     left: 131px;
+}
+
+.checked {
+    left: 180px;
+    color: #45b480;
 }

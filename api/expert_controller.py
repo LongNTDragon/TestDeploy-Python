@@ -46,7 +46,7 @@ def expert02():
     
     data = request.json
     drawHexagon(data, 'hexagon_expert.png')
-    drawScatterPlotNoAxis(data['prompted_percentile'], data['unprompted_percentile'], 'graph_scatter_plot_prompt_unprompted.png')
+    drawScatterPlotNoAxis(data['prompted_percentile'], data['unprompted_percentile'], 'graph_scatter_plot_prompt_unprompted.png', data['name'])
     return reportPdf('expert_02.html', data)
 
 def expert03():
@@ -70,8 +70,8 @@ def expert03():
             'messages':messageArr
         }
     data = request.json
-    drawScatterPlot(data['month'] , data['relevant_mov'], 'graph_scatter_plot_task-relevant.png')
-    drawScatterPlot(data['month'], data['unrelevant_mov'], 'graph_scatter_plot_unprompted.png')
+    drawScatterPlot(data['month'] , data['relevant_mov'], 'graph_scatter_plot_task-relevant.png', data['name'])
+    drawScatterPlot(data['month'], data['unrelevant_mov'], 'graph_scatter_plot_unprompted.png', data['name'])
     return reportPdf('expert_03.html', data)
 
 def expert04():

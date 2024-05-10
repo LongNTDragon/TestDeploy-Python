@@ -16,10 +16,9 @@
 }
 
 .table_bar {
-    position: relative;
+    position: absolute;
+    left: 130px;
     top: 380px;
-    margin: auto;
-    width: fit-content;
 }
 
 .space {
@@ -95,10 +94,9 @@
 }
 
 .table_box1 {
-    position: relative;
-    top: 430px;
-    width: fit-content;
-    margin: auto;
+    position: absolute;
+    top: 530px;
+    left: 130px;
 }
 
 .table_box1_1 {
@@ -154,15 +152,12 @@
 
 .table_box2 {
     position: relative;
-    top: 454px;
+    top: 554px;
     height: 300px;
-    width: 89.5%;
-    margin: auto;
 }
 
 .table_box2_title {
     position: relative;
-    text-align: center;
     font-size: 36px;
     bottom: 10px;
 }
@@ -219,10 +214,9 @@
 }
 
 .table_box3 {
-    position: relative;
-    top: 430px;
-    width: fit-content;
-    margin: auto;
+    position: absolute;
+    top: 930px;
+    left: 130px;
 }
 
 .table_box3_1 {
@@ -269,4 +263,8 @@
     letter-spacing: -0.48px;
     text-align: center;
     color: #303030;
+}
+
+.text-bold {
+    font-weight: 700;
 }

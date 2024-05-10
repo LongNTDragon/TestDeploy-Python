@@ -42,8 +42,8 @@
             {{ institution }}<br>
             {{ date }}<br>
             {{ name }}<br>
-            {{ age }}<br>
-            {{ gender }}
+            만 {{ age }}세<br>
+            {{ '남' if gender == 0 else '여' }}
         </span>
 
         <span class="line"></span>

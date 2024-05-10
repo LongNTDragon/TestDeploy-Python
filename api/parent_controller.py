@@ -1,5 +1,5 @@
 from flask import request
-from .service import validateInfo, reportPdf, drawHexagon, drawScatterPlot, drawHeartRatePlot
+from .service import validateInfo, reportPdf, drawHexagon, drawScatterPlot, drawHeartRatePlot, drawGrowthPlot
 
 def parent01():
     messageArr = []
@@ -15,6 +15,7 @@ def parent01():
             'messages':messageArr
         }
     data = request.json
+    drawGrowthPlot(50, 'parent01_growth.png')
     return reportPdf('parent_01.html', data)
 
 # def parent02():

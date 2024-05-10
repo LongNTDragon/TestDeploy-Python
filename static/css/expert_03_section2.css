@@ -1,6 +1,6 @@
 .title2 {
     position: absolute;
-    top: 1320px;
+    top: 1250px;
     left: 131px;
     height: 55px;
     object-fit: contain;
@@ -17,9 +17,7 @@
 
 .graph {
     position: absolute;
-    width: fit-content;
-    margin: auto;
-    top: 1450px;
+    top: 1400px;
     left: 131px;
 }
 
@@ -75,7 +73,6 @@
 
 .note {
     position: absolute;
-    width: fit-content;
     right: 70px;
 }
 
@@ -97,9 +94,10 @@
 }
 
 .desc {
-    position: relative;
+    position: absolute;
+    left: 130px;
+    top: 2500px;
     width: 89.5%;
-    top: 1700px;
     margin: auto;
     font-family: Pretendard;
     font-size: 36px;
