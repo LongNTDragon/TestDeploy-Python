@@ -30,7 +30,7 @@
     position: absolute;
     width: 351px;
     height: 351px;
-    left: 50px;
+    left: 90px;
 }
 
 
@@ -43,96 +43,6 @@
     width: 1119px;
     height: 327px;
     object-fit: contain;
-}
-
-.chuduoicung {
-    position: absolute;
-    width: 815px;
-    height: 38px;
-    margin: 62px 722px 0 139px;
-    top: 2900px;
-    left: 533px;
-    bottom: 61px;
-    right: 833px;
-    object-fit: contain;
-    font-family: Pretendard;
-    font-size: 32px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.5;
-    letter-spacing: -0.48px;
-    text-align: center;
-    color: #aeaeae;
-}
-
-.contents_right_bold {
-    height: 193px;
-    margin: -224px -65px -0 -0;
-    font-family: Pretendard;
-    font-size: 38px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.95;
-    letter-spacing: -0.57px;
-    text-align: left;
-    color: #2a2a2a;
-    float: right;
-}
-
-.contents_left_bold {
-    height: 193px;
-    margin: 46px 215px 0 0;
-    font-family: Pretendard;
-    font-size: 38px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.95;
-    letter-spacing: -0.57px;
-    text-align: left;
-    color: #2a2a2a;
-}
-
-.contents_title {
-    width: 534px;
-    height: 50px;
-    margin: 0 494px 46px 0;
-    font-family: Pretendard;
-    font-size: 42px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.9;
-    letter-spacing: -0.63px;
-    text-align: left;
-    color: #2a2a2a;
-}
-
-.khunggiua {
-    position: absolute;
-    height: 368px;
-    top: 2474px;
-    left: 163px;
-    right: 139px;
-    bottom: 813px;
-    width: 236px;
-    width: 1556px;
-    height: 288px;
-    padding: 77px 276px 86px 131px;
-    border-radius: 35px;
-    background-color: #f6f6f6;
-}
-
-.anhgiua {
-    position: absolute;
-    height: 863px;
-    top: 1611px;
-    left: 714px;
-    right: 139px;
-    bottom: 813px;
-    width: 1443px;
 }
 
 .info_normal {
@@ -171,6 +81,60 @@
     color: #575757;
 }
 
+.anhgiua {
+    position: absolute;
+    height: 863px;
+    top: 1611px;
+    right: 111px;
+}
+
+.khunggiua {
+    position: absolute;
+    top: 2474px;
+    left: 163px;
+    width: 2154px;
+    height: 482px;
+    border-radius: 35px;
+    background-color: #f6f6f6;
+}
+
+.contents_title {
+    position: absolute;
+    left: 131px;
+    top: 77px;
+    font-family: Pretendard;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.9;
+    letter-spacing: -0.63px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.contents_left_bold {
+    position: absolute;
+    left: 131px;
+    top: 120px;
+    font-family: Pretendard;
+    font-size: 38px;
+    line-height: 1.95;
+    letter-spacing: -0.57px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.contents_right_bold {
+    position: absolute;
+    right: 131px;
+    top: 173px;
+    font-family: Pretendard;
+    font-size: 38px;
+    line-height: 1.95;
+    letter-spacing: -0.57px;
+    text-align: left;
+    color: #2a2a2a;
+}
+
 .chuatieude2 {
     width: 584px;
     height: 315px;
@@ -203,4 +167,17 @@
     left: 204px;
     bottom: 956px;
     object-fit: contain;
+}
+
+.chuduoicung {
+    position: absolute;
+    top: 3000px;
+    left: 833px;
+    object-fit: contain;
+    font-family: Pretendard;
+    font-size: 32px;
+    line-height: 2.5;
+    letter-spacing: -0.48px;
+    text-align: center;
+    color: #2a2a2a;
 }

@@ -124,23 +124,19 @@ body {
 .table1_bar1 {
     position: absolute;
     top: 380px;
-    left: 130px;
-    width: 510px;
+    left: 95px;
+    width: 550px;
     height: 100px;
     border-bottom: 5px solid #000;
-    /* color: #fff; */
-    /* background-color: #0c4999; */
 }
 
 .table1_bar2 {
     position: absolute;
     top: 380px;
     left: 638px;
-    width: 1712px;
+    width: 1745px;
     height: 100px;
     border-bottom: 5px solid #000;
-    /* color: #fff; */
-    /* background-color: #0c4999; */
 }
 
 .table1_bar1_1 {
@@ -531,17 +527,18 @@ body {
 .session2 {
     position: absolute;
     top: 1450px;
-    left: 100px;
+    left: 91px;
 }
 
 .session2 .title2 {
-    display: flex;
     font-size: 46px;
-    justify-content: space-between;
 }
 
 .session2 .divider2 {
-    width: 2020px;
+    position: absolute;
+    top: 0px;
+    left: 270px;
+    width: 2030px;
     height: 4px;
     margin-top: 25px;
     background-color: #0c4999;

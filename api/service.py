@@ -168,7 +168,7 @@ def drawGrowthPlot(percent, image_name):
     percentiles = np.linspace(0, 100, 1001)
     values = np.sin(percentiles * np.pi / 200) * 100 
 
-    plt.figure(figsize=(29.4, 5))
+    plt.figure(figsize=(29.45, 5))
     plt.plot(percentiles, values, marker='o', markersize=10, markevery=[percent*10], color='#0c4999')
     
     extra = 0
