@@ -29,10 +29,10 @@
       <span style="left: 630px;" class="table_bar2">Z-Score <span class="space">:</span>
         <span class="table_bar_value">{{ z_score }}</span></span>
 
-      <span style="left: 1150px;" class="table_bar3">σ2(Variance) <span class="space">:</span>
+      <span style="left: 1150px;" class="table_bar3">σ<sup>2</sup>(Variance) <span class="space">:</span>
         <span class="table_bar_value">{{ variance }}</span></span>
 
-      <span style="left: 1770px ;" class="table_bar4">Average σ2 <span class="space">:</span>
+      <span style="left: 1770px ;" class="table_bar4">Average σ<sup>2</sup> <span class="space">:</span>
         <span class="table_bar_value">{{ variance_avg }}</span></span>
     </div>
 
@@ -41,8 +41,10 @@
       <img src="{{ absolute_path }}{{ image_name | img }}" />
 
       <span class="table_box1_1">주의집중력 분석 기준</span>
-      <span class="table_box1_2">σ2 > Average σ2</span>
-      <span class="table_box1_3">σ2 < Average σ2</span>
+      <span class="table_box1_2">σ<sup>2</sup> > Average σ<sup>2</sup></span>
+      <span class="table_box1_3">σ<sup>2</sup>
+        < Average σ<sup>2</sup>
+      </span>
     </div>
 
     <div class="table_box2" style="top: 650px;">
