@@ -59,7 +59,7 @@ def parent03():
 
 def parent04():
     messageArr = []
-    validateInfo('factor1', request.json, messageArr)
+    validateInfo('factor', request.json, messageArr)
 
     validateInfo('date', request.json, messageArr)
     validateInfo('name', request.json, messageArr)
@@ -73,7 +73,7 @@ def parent04():
         }
     
     data = request.json
-    drawGrowthPlot(data['factor1'], 'parent04_growth.png')
+    drawGrowthPlot(data['factor'], 'parent04_growth.png')
     return reportPdf('parent_04.html', data)
 
 def parent05():

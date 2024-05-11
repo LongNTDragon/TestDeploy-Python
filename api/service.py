@@ -6,6 +6,9 @@ from flask import render_template_string, send_file
 import pandas as pd # type: ignore
 from scipy.signal import butter, filtfilt # type: ignore
 import numpy as np # type: ignore
+
+#production
+# plt.rcParams['font.family'] = 'NanumGothic'
 plt.rcParams['font.family'] = 'Malgun Gothic'
 
 def validateInfo(attribute, object, messageArr):

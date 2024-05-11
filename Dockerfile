@@ -4,6 +4,8 @@ RUN apt-get update
 
 RUN apt-get install -y wkhtmltopdf
 
+RUN apt-get install -y fonts-nanum
+
 WORKDIR /app
 
 COPY requirements.txt .

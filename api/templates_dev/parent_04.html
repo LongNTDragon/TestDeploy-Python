@@ -49,16 +49,16 @@
           <div class="column_title column5">우수</div>
         </div>
         <div class="line2">
-          {% set classname = "column2" if not factor1 >= 35 else "column0"%}
+          {% set classname = "column2" if not factor >= 35 else "column0"%}
           <div class="column_title {{ classname }}">&#10003;</div>
 
-          {% set classname = "column3" if (factor1 >= 35 and not factor1 >= 45) else "column0"%}
+          {% set classname = "column3" if (factor >= 35 and not factor >= 45) else "column0"%}
           <div class="column_title {{ classname }}">&#10003;</div>
 
-          {% set classname = "column4" if (factor1 >= 45 and not factor1 >= 80) else "column0"%}
+          {% set classname = "column4" if (factor >= 45 and not factor >= 80) else "column0"%}
           <div class="column_title {{ classname }}">&#10003;</div>
 
-          {% set classname = "column5" if factor1 >= 80 else "column0"%}
+          {% set classname = "column5" if factor >= 80 else "column0"%}
           <div class="column_title {{ classname }}">&#10003;</div>
         </div>
       </div>
